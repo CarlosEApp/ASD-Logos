@@ -1,0 +1,321 @@
+*{
+margin: 0%;
+padding: 0%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+::-webkit-scrollbar {
+width: 5px;
+margin-left: 5px;
+margin-top: 5px;
+/* Largura da barra de rolagem */
+cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+margin-left: 3px;
+background-color: rgba(0, 62, 100, 0);
+/* Cor do polegar da barra de rolagem */
+margin-top: 5px;
+border-radius: 5px;
+cursor: pointer;
+}
+:-webkit-scrollbar-track {
+/* Cor da trilha da barra de rolagem */
+margin-top: 5px;
+border-radius: 7 rgb(177, 175, 175);
+background-color: rgba(38, 39, 39, 0);
+border-radius: 5px;
+cursor: pointer;
+}
+body{
+font-family: 'Poppins', sans-serif;
+background-color: rgb(23, 53, 70);
+margin: 0%;
+padding: 0%;
+}
+header{
+margin: auto;
+width: 100%;
+background-color: black;
+padding-bottom: 20px;
+position: fixed;
+}
+#header_um{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+#header_dois{
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-wrap: wrap;
+}
+header i{
+color: aliceblue;
+cursor: pointer;
+}
+#togle{
+margin-right: 10px;
+}
+#menu{
+margin-right: 10px;
+font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+display: none;
+}
+#I_Casa{
+font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+margin-right: 10px;
+}
+header button{
+padding: 5px;
+cursor: pointer;
+border: 0cap;
+background-color: transparent;
+color: rgb(255, 255, 255);
+font-family: 'Poppins', sans-serif;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+border-radius: 5px;
+}
+header select{
+border: 0cap;
+outline: none;
+cursor: pointer;
+background-color: aliceblue;
+padding: 7px;
+font-family: 'Poppins', sans-serif;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+border-radius: 2px;
+text-shadow: 0px 1px 1px black;
+margin-top: 10px;
+}
+#divPsq{
+background-color: rgb(0, 22, 221);
+padding: 1px;
+border-radius: 5px;
+margin-top: 10px;
+}
+#divPsq input{
+width: 280px;
+cursor: pointer;
+background-color: aliceblue;
+color: rgb(0, 0, 0);
+border: 0cap;
+outline: none;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+text-shadow: 0px 1px 1px rgb(0, 0, 0);
+padding: 7px;
+font-family: 'Poppins', sans-serif;
+}
+#divPsq i{
+margin-left: 10px;
+margin-right: 5px;
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.200rem);
+}
+#divPsq i:hover{
+color: rgb(255, 230, 0);
+}
+main{
+padding-top: 160px;
+margin: auto;
+width: 100%;
+min-height: 100vh;
+}
+#divCadastro{
+margin: auto;
+width: 97%;
+max-width: 550px;
+background-color: aliceblue;
+min-height: 50vh;
+border-radius: 10px;
+margin-top: 52px;
+padding-bottom: 30px;
+display: none;
+}
+#divCadastro h1, #h2_itens_cad{
+margin-left: 20px;
+padding-top: 10px;
+margin-bottom: 10px;
+font-family: 'Poppins', sans-serif;
+}
+#divInputCad{
+margin: auto;
+width: 95%;
+}
+#divCadastro label{
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-family: 'Poppins', sans-serif;
+}
+#divCadastro input{
+width: 70%;
+border: 0cap;
+background-color: transparent;
+border-bottom: 1px solid black;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
+cursor: pointer;
+outline: none;
+margin-bottom: 10px;
+}
+
+#divCadastro #inputCódigo{
+width: 150px;
+border: 0cap;
+background-color: transparent;
+color: rgb(255, 72, 0);
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.200rem);
+border-bottom: 1px solid black;
+}
+#select_Departamentos, #sel-Departamentos {
+margin-top: 20px;
+border: 0cap;
+background-color: rgb(0, 0, 241);
+outline: none;
+color: aliceblue;
+cursor: pointer;
+padding: 7px;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+text-shadow: 0px 1px 1px rgb(78, 78, 78);
+font-family: 'Poppins', sans-serif;
+
+}
+#fileInput{
+display: none;
+}
+#imagemLogo{
+float: right;
+margin-right: 20px;
+margin-top: 10px;
+cursor: pointer;
+}
+#divIMGEM{
+margin: auto;
+width: 200px;
+background-color: rgb(238, 67, 0);
+color: rgb(231, 230, 230);
+padding: 7px;
+text-align: center;
+border-radius: 3px;
+cursor: pointer;
+}
+#escolha_imagem{
+cursor: pointer;
+font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.300rem);
+}
+#divIMGEM:hover{
+background-color: brown;
+}
+#divSalvarCad{
+margin: auto;
+width: 200px;
+background-color: rgb(0, 99, 44);
+color: rgb(231, 230, 230);
+padding: 7px;
+text-align: center;
+border-radius: 3px;
+cursor: pointer;
+margin-bottom: 30px;
+display: none;
+}
+#P_fechar_Cad, #P_fechar_CadItens{
+float: right;
+margin-right: 10px;
+cursor: pointer;
+font-size: clamp(1.500rem, 0.3vw  + 0.5rem, 1.500rem);
+margin-top: 10px;
+font-family: 'Poppins', sans-serif;
+}
+#P_fechar_Cad:hover{
+color: red;
+}
+#div_Cadastrados{
+margin: auto;
+width: 95%;
+max-width: 550px;
+min-height: 60vh;
+background-color: aliceblue;
+border-radius: 20px;
+display: none;
+padding: 10px;
+margin-top: 50px;
+padding-bottom: 80px;
+}
+#selectDoc{
+padding: 3px;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+cursor: pointer;
+outline: none;
+background-color: rgb(1, 74, 138);
+border-radius: 3px;
+color: aliceblue;
+margin-left: 15px;
+margin-bottom: 15px;
+}
+#bTipo{
+color: rgba(49, 49, 49, 0.644);
+}
+#lblEXC{
+cursor: pointer;
+float: right;
+margin-right: 20px;
+color: rgb(2, 2, 2);
+
+}
+#iEXC{
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.200rem);
+color: rgb(31, 31, 31);
+
+}
+#lblEXC:hover, #iEXC:hover{
+color: red;
+}
+#lblEXC:hover i{
+color: red;
+}
+.div2,.div3 {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.ContG{
+    margin: auto;
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.733);
+    padding: 5px;
+    margin-top: 20px;
+    background-color: rgb(0, 26, 255);
+    color: aliceblue;
+    border-radius: 10px;
+}
+.imagem1{
+    width: 90px;
+    max-height: 130px;
+}
+.ContG label{
+    font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.541);
+}
+.ContG #botão{
+    margin-right: 10px;
+    color: rgb(255, 255, 255);
+      font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+      cursor: pointer;
+       border: 0cap;
+       background-color: rgba(1, 90, 102, 0.774);
+       padding: 4px;
+       border-radius: 3px;
+}
+.ContG #botão:hover{
+     background-color: rgb(1, 102, 60);
+}
+.ContG #botão2{
+    margin-right: 10px;
+    color: rgb(255, 255, 255);
+      font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+      cursor: pointer;
+       border: 0cap;
+}
+.ContG #botão2:hover{
+     color: rgb(0, 199, 17);
+}
