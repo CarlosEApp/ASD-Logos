@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="titulo">Imovel</title>
+<link rel="shortcut icon" href="../src/Rute_avatar_.png" type="image/x-icon">  
+<meta property="og:title" content="Rutimóveis - Seu Sonho, Nosso Compromisso!" />
+<meta property="og:description" content="Encontre o imóvel dos seus sonhos com a Rutimóveis. Compromisso e confiança em cada negociação." />
+<meta property="og:image" content="https://rutimoveis.netlify.app/../src/MetategBanner.png" />
+<meta property="og:url" content="https://rutimoveis.netlify.app" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Rutimóveis - Seu Sonho, Nosso Compromisso!" />
+<meta name="twitter:description" content="Imóveis com qualidade e confiança. Seu sonho começa aqui!" />
+<meta name="twitter:image" content="https://rutimoveis.netlify.app/src/MetategBanner.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<meta name="msvalidate.01" content="91A47097945E8CDB896C9CA2D3B40518" />
+<meta name="google-site-verification" content="I5QDbpWaGPHDZCWZITuNbd94oKGkibaclmduJlckKqU"/>
+
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Leaflet Routing Machine -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+<link rel="stylesheet" href="../css/imovel.css">
+</head>
+
+<body>
+<div id="containner">
+<a id="a_topo" href="#" title="Topo"></a>
+<header>
+<div id="head_um">
+<h1>Imóvel</h1>
+</div>
+<div id="head_dois">
+<i id="I_Casa" class="fa-solid fa-house" onclick="casa()"></i> <div id="divInput"> <i id="i_pequisa_imovel" class="fa-solid fa-magnifying-glass"></i> 
+<input id="input_pesquisa"  type="text" title="Pesquisar" placeholder="Pesquisa..."> <button id="btnPesquisar" title="Pesquisar"  onclick="Pesquisar()"><i class="fa-solid fa-arrow-right-to-bracket"></i></button></div> <button title="tela cheia" id="btnTela" onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button> 
+</div>
+</header>
+
+<main>
+<div id="main_um">
+<h1 id="h1_titulo"> Titulo</h1>
+<h3 id="h3_subtitulo">SubTitulo</h3>
+
+<div id="div_valores">
+<div id="divVenda"><label for="">Venda</label> <h3 id="h3Venda">00.000,00 </div>
+<div id="divlocaçao"><label for="">Locação</label> <h3 id="h3Locação">00.000,00 </h3></div>
+<div id="divIptu"><label for="">IPTU</label> <h3 id="h3IPTU">00.000,00</h3></div>
+<div id="divCond"><label for="">Condominio</label> <h3 id="h3Cond">00.000,00 </h3></div>
+
+</div>
+
+</div>
+<div id="flex_Carrocel_info">
+<div id="div_carrocel">
+<h2 id="h2_imagens">Imagens <b id="img_count">1</b></h2>
+<div id="meu_carrossel_custom">
+<div id="faixa_imagens"></div>
+<button id="btn_prev">◀</button>
+<button id="btn_next">▶</button>
+</div>
+</div>
+
+<div id="div_info" >
+
+<div id="CorretoresDiv">
+<h2>Fale Conosco </h2>
+<div id="div_Corretor">
+<div id="Corr_um">
+<div id="divCorretora">
+<img src="../src/Rute_foto_perfil.png" alt="" title="Corretora Rute">
+
+<p> Corretora <b id="bcr">Rute</b></p>
+</div>
+</div>
+<div id="Corr_dois">
+<h2>Mensagens</h2>
+<div id="divContato">
+<button id="btnEmal" onclick="Email()"> Mensagem por email <i class="fa-regular fa-envelope"></i></button> <br>
+<button id="btnZap" onclick="WhatsApp()">Mensagem por whatsApp <i class="fa-brands fa-whatsapp"></i></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="div_dados_IMV">
+<h2 id="dadosH1">Informações do Imóvel <i id="iCaomp" onclick="comp()" title="Compartilhar" class="fa-solid fa-share-nodes"></i>  </h2>
+<div id="divDadosFlex">
+<div id="divDados">
+<h3 id="h3codigo">000000</h3> <br><br>
+<div id="apresentObs">
+<h2 id="h2Apresent"></h2>
+<div id="divOBS"> <p>OBS</p> </div>
+</div>
+
+<div id="divInformaçoesIMV">
+<div id="div1"><p id="div1_p1"> > Transação</p> <p id="div1_p2"> </p> </div> <br>
+
+<div id="div2"><p id="div2_p1"> > Área construida</p> <p id="div2_p2"> </p> </div> <br>
+
+<div id="div3"><p id="div3_p1"> > Cidade</p>  <p id="div3_p2"></p> </div> <br>
+
+<div id="div4"><p id="div4_p1"> > Bairro</p>  <p id="div4_p2"> </p> </div> <br>
+
+<div id="div5"><p id="div5_p1"> > Rua</p>  <p id="div5_p2"> </p> </div> <br>
+
+<div id="div6"><p id="div6_p1"> >Quartos</p>  <p id="div6_p2"></p> </div> <br>
+
+<div id="div11"><p id="div11_p1"> >Suites</p>  <p id="div11_p2"></p> </div> <br>
+
+<div id="div7"><p id="div7_p1"> > Banheiros</p>  <p id="div7_p2"> </p> </div> <br>
+
+<div id="div8"><p id="div8_p1">> Vagas de garagem</p> <p id="div8_p2"> </p> </div> <br>
+
+<div id="div9"><p id="div9_p1"> > Piscina</p> <p id="div9_p2"> </p></div> <br>
+
+</div>
+<div id="div_localização">
+<div id="div10"><p id="div10_p1"> > CEP</p>  <p id="div10_p2"> 10</p> </div> <br>
+<h2>Localização</h2>
+<div id="map"></div>
+
+</div>
+
+
+</div>
+<div id="dadosEx">
+<div  title="Área construida" >
+<img src="../src/regua.png" alt="Área construida"width="70px"> <p><b id="inf_metragem"></b></p>
+</div>
+
+<div title="Quartos" >
+<img src="../src/cama-de-solteiro.png" alt="Quartos" width="70px"> <p> <b id="inf_quartos"></b></p>
+</div>
+
+<div title="Banheiros" >
+<img src="../src/chuveiro.png" alt="Banheiros" width="70px"> <p> <b id="inf_banheiros"></b></p>
+</div>
+
+<div title="Vagas de garagem">
+<img src="../src/carro - Copia.png" alt="Vagas de garagem"  width="70px"> <p> <b id="inf_vagas"></b></p>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div id="Topo"><button id="Topo_Página" title="Ir para o Topo de Página" ><i class="fa-solid fa-arrow-up" ></i></button> <p>voltar ao topo</p></div>
+<br><br>
+<div id="main_dois">
+
+</div>
+</main>
+
+
+</div>
+<footer>
+
+</footer>
+
+
+
+
+<script src="../js/imovel.js"></script>
+</body>
+</html>

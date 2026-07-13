@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="Pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📝Cadastro</title>
+<link rel="shortcut icon" href="../src/Rute_avatar_.png" type="image/x-icon">  
+<meta property="og:title" content="Rutimóveis - Seu Sonho, Nosso Compromisso!" />
+<meta property="og:description" content="Encontre o imóvel dos seus sonhos com a Rutimóveis. Compromisso e confiança em cada negociação." />
+<meta property="og:image" content="https://rutimoveis.netlify.app/../src/MetategBanner.png" />
+<meta property="og:url" content="https://rutimoveis.netlify.app" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Rutimóveis - Seu Sonho, Nosso Compromisso!" />
+<meta name="twitter:description" content="Imóveis com qualidade e confiança. Seu sonho começa aqui!" />
+<meta name="twitter:image" content="https://rutimoveis.netlify.app/src/MetategBanner.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<meta name="msvalidate.01" content="91A47097945E8CDB896C9CA2D3B40518" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/cadastro.css">
+</head>
+<body>
+<div id="containner">
+<a id="inicio_a" href="#" title="Inicio"></a>
+<a id="a_Cadastro" href="#IMvVendidos" title="Ir para cadastro"></a>
+
+<header>
+<h1>📝Tela de Cadastros</h1>
+<div id="header_um">  
+<select name="Operação" onchange="Select()" id="selectOperação"  title="Escolha uma operação">
+<option value="" disabled selected>Tipo de Operação</option>
+<option value="Cadastrar">Cadastrar novo Imóvel</option>
+<option value="Cadastrados">Imóveis já Cadastrados</option>
+<option value="Pesquisar">Pesquisar por imóveis</option>
+<option value=""></option>
+<option value="sair">Sair, Exit</option>
+</select>
+<button id="menuBTN" onclick="MenuButton()">Menu</button>
+</div>
+<div id="header_dois">
+</div>
+</header>
+<div id="menu" class="menu-lateral">
+<div id="divMinhaPesquisa">
+<button id="btnFecharP" onclick="toggleMenu()">✖ Fechar</button>
+<p id="p_pesquisa" >Pesquise por Rua, Bairro, Titulo ou Código do Imóvel.</p>
+<div id="divPesq"> <div id="inputpesq"><input id="pesquise" type="text" placeholder="Pesquisa.."><i id="pesqI" onclick="pesquisarProduto()" class="fa-solid fa-magnifying-glass"></i></div>
+<div id="respDiv">
+<h2>Resultado:</h2>
+<div id="listpesqRes"></div>
+</div>
+</div>
+</div>
+</div>
+
+<main>
+<div id="main_um">
+<div id="CadastrarIMV" > <img src="../src/MetategBanner.png" alt=""> <label for="">Cadastre um novo Imóvel</label></div>  <div id="IMvCadastrados"> <img src="../src/MetategBanner.png" alt=""> <label for="">Veja os Imóveis Cadastrados</label></div>
+<div id="IMvVendidos"><img src="../src/MetategBanner.png" alt=""> <label id="lbll" for=""><i class="fa-solid fa-magnifying-glass"></i> Pesquise por imóveis  </label></div>
+</div>
+<div id="main_dois">
+<div id="Cadastrar">
+<h2 id="tituloH2">Cadastre Imóvel</h2>
+<input id="UltimaEdição" type="text" for="" placeholder="EDT Por Ultimo" readonly>
+<label id="lblFech" for="" onclick="fech()"> <i id="iFechar" class="fa-solid fa-delete-left"></i> Sair</label><br>
+<div id="EndDiv">
+<h2>Endereço</h2><br>
+<label for=""> CEP <br>
+<input class="doc" type="text" id="Input_cep" oninput="aplicarMascaraCEP(event)" maxlength="9"  placeholder="CEP 00000.000">
+</label><br>
+<label id="lbl_rua" for=""> Rua <br>
+<input type="text" id="RuaInput" placeholder="Nome da rua">
+</label><br>
+<label for=""> Número <br>
+<input class="inp"  type="number" id="NumeroInput" placeholder="Nº do Imóvel">
+</label><br>
+<label  id="lbl_bairro"  for=""> Bairro <br>
+<input type="text" id="BairroInput" placeholder="Bairro">
+</label><br>
+<label  id="lbl_cidade"  for=""> Cidade <br>
+<input type="text" id="CidadeInput" placeholder="Cidade">
+</label><br>
+<label  id="lbl_uf"  for=""> Estado UF<br>
+<input class="inp"  type="text" id="UFInput" placeholder="UF">
+</label><br>
+<label for=""> Referência <br>
+<input type="text" id="RefInput" placeholder="Referência do local">
+</label><br>
+</div>
+<div id="fichaDiv">
+<h2>Ficha do Imóvel</h2><br>
+<select name="Lista" id="ListaSeleção" title="Lista de descrição e armazenamento do imóvel">
+<option value=''disabled selected>Lista do imóvel</option>
+<option value="COLL_Casas">Casas Térrea</option>
+<option value="COLL_Sobrados">Sobrados</option>
+<option value="COLL_Apartamentos">Apartamentos</option>
+<option value="COLL_Terrenos">Terrenos</option>
+<option value="COLL_Lojas">Lojas</option>
+<option value="COLL_Galpões">Galpões</option>
+<option value="COLL_Armazens">Armazens</option>
+<option value="COLL_Chacaras">Chácaras</option>
+<option value="COLL_Sítios">Sítios</option>
+</select><br><br>
+<select name="destaque" id="destaque"  title="Colocar em destaque?">
+<option value=""disabled selected>Colocar em Destaque?</option>
+<option value="destaque">Em Destaque</option>
+<option value="">Não destacado</option>
+</select><br><br>
+<p>Tipo de Transação?</p>
+<select name="destaque" id="tranzação"  title="Tipo de transação?">
+<option value=""disabled selected>Tipo de transação?</option>
+<option value="Venda">Imóvel para Venda</option>
+<option value="Locação">Imóvel para Locação</option>
+<option value="Temporada">Temporada</option>
+<option value="Lançamento">Lançamento</option>
+</select><br>
+<br>
+<label for=""> Código (Automático)<br>
+<input type="text" id="CódigoInput" placeholder="CÓD: 00000" readonly>
+</label><br>
+<label id="lbl_titulo" for=""> Titulo <br>
+<input type="text" id="TituloInput" placeholder="Titulo">
+</label><br>
+<label for=""> SubTitulo <br>
+<input type="text" id="SubToInput" placeholder="SubTitulo">
+</label><br>
+<p>Comodos e Descrição</p>
+<label id="lbl_quarto" for=""> Quartos <br>
+<input class="inp" type="number" id="QuartosInput" placeholder="0">
+</label><br>
+<label for=""> Suites <br>
+<input class="inp" type="number" id="SuitesgoInput" placeholder="0">
+</label><br>
+<label id="lbl_banheiro" for=""> Banheiros <br>
+<input class="inp" type="number" id="BanheirosInput" placeholder="0">
+</label><br>
+<label for=""> Vagas Garagem <br>
+<input class="inp" type="number" id="VagasInput" placeholder="0">
+</label><br>
+<label for=""> Piscina m² <br>
+<input class="inp" type="number" id="PiscinaInput" placeholder="0 m²">
+</label><br>
+<label for=""> Área construida m² <br>
+<input  class="inp"  type="number" id="AreaCInput" placeholder="0 m²">
+</label><br><br>
+<label for=""> Descrição e informações do Imóvel <br>
+<textarea name=""  id="OBSInput" placeholder="Descreva este imóvel para seus clientes..." title="Descrição do Imóvel"></textarea>
+</label><br><br>
+<p>Informações do Proprietário:</p>
+<br>
+<label for=""> CPF <br>
+<input class="doc" type="text" id="CPFpropInput" oninput="aplicarMascaraCPF(event)" maxlength="14" placeholder="CPF do Proprietário">
+</label><br>
+<label for=""> Nome<br>
+<input type="text" id="NomepropInput" placeholder="Nome proprietário">
+</label><br>
+<label  for=""> Nº telefone <br>
+<input  class="doc" type="tel" id="TelpropInput" placeholder="(11)99999-8888">
+</label><br><br>
+<p>Este Imóvel está disponivel?<br>  <b id="cores"> (Ativo <b id="verd"></b>)  (Suspenso <b id="blue"></b>)  (Vendido <b id="red"></b>) </b></p> <br>
+<select name="EstadoIMV" id="estadoIMV" title="Disponibilidade desse imóvel ">
+<option value="ativo">Ativo Disponivel</option>
+<option value="vendido">Vendido</option>
+<option value="suspenso">Suspenso</option>
+</select><br>
+<br>
+</div>
+<div id="divImagens">
+<input type="file" id="files" name="" title="imagem">
+<h2 id="h2IMG">Imagens do Imóvel</h2><br>
+<div id="myProgresso" title="Progresos">
+<div id="myBarIMG1">10%</div> 
+</div>
+<div id="divmyImagens">
+
+<div class="imgFlex"> <input type="text"  id='mymg1_' placeholder="URL Imagem 01"><i id="I_IMG" class="fa-solid fa-image"></i>
+<img id='mymg1' src="../src/MetategBanner.png" title="imagem 1" width="70px" > </div> <br>
+
+<div class="imgFlex"> <input type="text"  id='mymg2_' placeholder="URL Imagem 02"><i id="I_IMG2" class="fa-solid fa-image"></i>
+<img id='mymg2' src="../src/MetategBanner.png" title="imagem 2" width="70px" > </div> <br>
+
+<div class="imgFlex"> <input type="text"  id='mymg3_' placeholder="URL Imagem 03"><i id="I_IMG3" class="fa-solid fa-image"></i>
+<img id='mymg3' src="../src/MetategBanner.png" title="imagem 3" width="70px" > </div> <br>
+
+<div class="imgFlex"> <input type="text"  id='mymg4_' placeholder="URL Imagem 04"><i id="I_IMG4" class="fa-solid fa-image"></i>
+<img id='mymg4' src="../src/MetategBanner.png" title="imagem 4" width="70px" > </div> <br>
+
+<div class="imgFlex"> <input type="text"  id='mymg5_' placeholder="URL Imagem 05"><i id="I_IMG5" class="fa-solid fa-image"></i>
+<img id='mymg5' src="../src/MetategBanner.png" title="imagem 5" width="70px" > </div> <br>
+
+<div class="imgFlex"> <input type="text"  id='mymg6_' placeholder="URL Imagem 06"><i id="I_IMG6" class="fa-solid fa-image"></i>
+<img id='mymg6' src="../src/MetategBanner.png" title="imagem 6" width="70px" > </div> <br>
+
+<div class="imgFlex"> <input type="text"  id='mymg7_' placeholder="URL Imagem 07"><i id="I_IMG7" class="fa-solid fa-image"></i>
+<img id='mymg7' src="../src/MetategBanner.png" title="imagem 6" width="70px" > </div> <br>
+
+<div class="imgFlex"> <input type="text"  id='mymg8_' placeholder="URL Imagem 08"><i id="I_IMG8" class="fa-solid fa-image"></i>
+<img id='mymg8' src="../src/MetategBanner.png" title="imagem 8" width="70px" > </div> <br>
+
+<div class="imgFlex"> <input type="text"  id='mymg9_' placeholder="URL Imagem 09"><i id="I_IMG9" class="fa-solid fa-image"></i>
+<img id='mymg9' src="../src/MetategBanner.png" title="imagem 9" width="70px" > </div> <br>
+
+<div class="imgFlex"> <input type="text"  id='mymg10_' placeholder="URL Imagem 10"><i id="I_IMG10" class="fa-solid fa-image"></i>
+<img id='mymg10' src="../src/MetategBanner.png" title="imagem 10" width="70px" > </div> <br>
+         
+</div>
+</div>
+<div id="valorDiv">
+<h2 id="h2IMG">Valores do Imóvel </h2><br>
+<label for=""> IPTU<br>
+<input type="text" id="IPTUInput" placeholder="R$ 0,00">
+</label><br>
+<label for=""> Condomínio<br>
+<input type="text" id="CondominíoInput" placeholder="R$ 0,00">
+</label><br>
+<p id="p_red">Preencha um dos valores: "Venda , Locação ou Ambos"</p>
+<br>
+<label for=""> Valor para Venda<br>
+<input type="text" id="vendaVInput" placeholder="R$ 0,00">
+</label><br>
+<label for=""> Valor para Locação<br>
+<input type="text" id="LocaçãoVInput" placeholder="R$ 0,00">
+</label><br><br><br>
+<div id="div_Valores">
+<button id="btnSalva" onclick="salvar()" title="Salvar cadastro">Salvar Cadastro</button>
+</div><br><br>
+</div>
+<div id="btns">
+<button id="btnsVoltar" onclick="voltarcad()"><i class="fa-solid fa-left-long"></i> Voltar</button> <button id="proximo" onclick="proximo()">Proxímo >>></button>
+</div>
+</div>
+<div id="Cadastrados">
+<div id="cadastrados_um">
+<label id="lblFech2" for="" onclick="fech2()"> <i id="iFechar" class="fa-solid fa-delete-left"></i> Sair</label>
+<select name="Lista" id="ListadoImóvel" onchange="imovelList()" title="Lista onde está armazenado o imóvel">
+<option value="" disabled selected>Lista do imóvel</option>
+<option value="GeralColl">Todos os Imóveis</option>
+<option value="COLL_Casas">Casas Térrea</option>
+<option value="COLL_Sobrados">Sobrados</option>
+<option value="COLL_Apartamentos">Apartamentos</option>
+<option value="COLL_Terrenos">Terrenos</option>
+<option value="COLL_Lojas">Lojas</option>
+<option value="COLL_Galpões">Galpões</option>
+<option value="COLL_Armazens">Armazens</option>
+<option value="COLL_Chacaras">Chácaras</option>
+<option value="COLL_Sítios">Sítios</option>
+<option value="vendido">Vendidos</option>
+<option value="suspenso">Suspensos</option>
+<option value=""disabled selected></option>
+<option value="Coll_EXCLUIDOS">Imóveis Excluidos</option>
+<option value="">Sair, Exit</option>
+</select> <button id="pesquisa" title="Pesquisar"><i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </button></div>
+<div id="divLista">
+<h2>🏡Imoveis <b id="B_encontrados"> </b></h2>
+<div id="divlist"></div>
+</div>     
+</div>
+
+</div>
+
+</main>
+<footer>
+
+</footer>
+</div>
+
+<script src="../js/cadastro.js"></script>
+</body>
+</html>

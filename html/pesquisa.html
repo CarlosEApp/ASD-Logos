@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="tetuloTeg">Pesquisa</title>
+    <link rel="shortcut icon" href="../src/Rute_avatar_.png" type="image/x-icon">  
+<meta property="og:title" content="Rutimóveis soluções residenciais">
+<meta property="og:description" content="Imóveis em Itanhaém com preços acessíveis. Casas, sobrados e apartamentos. A Rutimóveis ajuda você a realizar o sonho da casa própria com confiança...">
+<meta property="og:image" content="https://rutimoveis.netlify.app/assets/Rutimoveis-img.png">
+<meta property="og:url" content="https://rutimoveis.netlify.app/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script> -->
+<!--<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script> -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script> -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<meta name="google-site-verification" content="I5QDbpWaGPHDZCWZITuNbd94oKGkibaclmduJlckKqU"/>
+<meta name="msvalidate.01" content="91A47097945E8CDB896C9CA2D3B40518" />
+
+
+ <link rel="stylesheet" href="../css/pesquisa.css">
+</head>
+<body>
+    <div id="containner">
+
+        <header>
+            <h2>Pesquisa</h2>
+            <div id="head_dois">
+ <i id="I_Casa" class="fa-solid fa-house" onclick="casa()"></i> <div id="divInput"> <i id="i_pequisa_imovel" class="fa-solid fa-magnifying-glass"></i> 
+<input id="input_pesquisa"  type="text" title="Pesquisar" placeholder="Pesquisa..."> <button id="btnPesquisar" onclick="Pesquisar_()" title="Pesquisar"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+</button></div> <button title="tela cheia" id="btnTela" onclick="toggleFullScreen()"> <i class="fa-solid fa-desktop"></i> </button> 
+</div>
+        </header>
+
+        <main>
+            <div id="respPesquisa">
+                <div id="cabeçario">
+                 <h2>Resultado da pesquisa: </h2>
+                 <p id="resultnumber"> Imóveis encontrados </p>
+                </div>
+                <div id="corpo">
+                    <div id="divFlex">
+                        <br>
+                        <div id="listRep">
+                            <div id="list"></div>
+                            <br>
+                            <button id="btnnVerMais" onclick="QueroVermais()">Ver Mais</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="listaCasa"></div>
+            </div>
+        </main>
+    </div>
+
+<!--footer fora o container -->
+     <footer>
+
+     </footer>
+     <script src="../js/pesquisa.js"></script>
+</body>
+</html>

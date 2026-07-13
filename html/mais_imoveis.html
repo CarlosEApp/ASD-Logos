@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imóveis</title>
+    <link rel="shortcut icon" href="../src/Rute_avatar_.png" type="image/x-icon">  
+<meta property="og:title" content="Rutimóveis - Seu Sonho, Nosso Compromisso!" />
+<meta property="og:description" content="Encontre o imóvel dos seus sonhos com a Rutimóveis. Compromisso e confiança em cada negociação." />
+<meta property="og:image" content="https://rutimoveis.netlify.app/src/MetategBanner.png" />
+<meta property="og:url" content="https://rutimoveis.netlify.app" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Rutimóveis - Seu Sonho, Nosso Compromisso!" />
+<meta name="twitter:description" content="Imóveis com qualidade e confiança. Seu sonho começa aqui!" />
+<meta name="twitter:image" content="https://rutimoveis.netlify.app/src/MetategBanner.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<meta name="msvalidate.01" content="91A47097945E8CDB896C9CA2D3B40518"/>
+<meta name="google-site-verification" content="I5QDbpWaGPHDZCWZITuNbd94oKGkibaclmduJlckKqU"/>
+
+<link rel="stylesheet" href="../css/mais_imoveis.css">
+</head>
+<body>
+<div id="containner">
+<a id="a_topo" href="#" title="Topo"></a>
+<header>
+<div id="head_um">
+<h1>Imóveis</h1>
+</div>
+<div id="head_dois">
+<i id="I_Casa" class="fa-solid fa-house" onclick="casa()"></i> <div id="divInput"> <i id="i_pequisa_imovel" class="fa-solid fa-magnifying-glass"></i> 
+<input id="input_pesquisa"  type="text" title="Pesquisar" placeholder="Pesquisa..."> <button id="btnPesquisar" title="Pesquisar"  onclick="Pesquisar()"><i class="fa-solid fa-arrow-right-to-bracket"></i></button></div> <button title="tela cheia" id="btnTela" onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button> 
+</div>
+</header>
+
+<main>
+<div  class="diValores" id="diValores">
+        <div>
+<select name="" id="tranzação"  title="Tipo de tranzação ">
+<option value=""disabled selected>Transação ?</option>
+<option value="Venda">Venda</option>
+<option value="Locação">Locação</option>
+<option value="Temporada">Temporada</option>
+<option value="Lançamento">Lançamento</option>
+</select>
+</div>
+<div>
+<div id="divP1">
+<Label>Max </Label> <input id="ValorMaxInput" type="text" title="Valor maxímo do Imóvel" placeholder="R$ 200.000,00 ">
+</div>
+<div id="divP1">
+<Label>MIn </Label> <input id="ValorMinInput" type="text" title="Valor minimo do Imóvel" placeholder="R$ 100.000,00 ">
+</div></div>
+<div id="divP" ><button id="btnBuscaValor" onclick="buscarValores()"><i id="pesq" class="fa-solid fa-magnifying-glass"></i> Buscar</button></div> 
+</div>
+
+<div id="main_um">
+<h1 id="h1_titulo"> Resultado da busca</h1>
+<h3 id="h3_subtitulo">Total disponiveis</h3>
+</div>
+ <div id="div_lista">
+    <div id="list"></div>
+ </div>
+  <button id="btnnVerMais" onclick="QueroVermais()">Ver Mais</button>
+
+</main>
+
+
+</div>
+<footer>
+
+</footer>
+
+<script src="../js/mais_imiveis.js"></script>
+</body>
+</html>
