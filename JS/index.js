@@ -646,6 +646,7 @@ localStorage.setItem("userId", userId);
 await firebase.firestore().collection("downloads").add({
 userId: userId,
 arquivo: doc.Titulo,
+SubTitulo: doc.Subtitulo,
 imagemUrl: doc.Imagem,
 data: new Date().toISOString()
 });
@@ -678,6 +679,7 @@ localStorage.setItem("userId", userId);
 await firebase.firestore().collection("compartilhamentos").add({
 userId: userId,
 arquivo: doc.Titulo,
+SubTitulo: doc.Subtitulo,
 imagemUrl: doc.Imagem,
 codigo: doc.Codigo_ID,
 data: new Date().toISOString()
