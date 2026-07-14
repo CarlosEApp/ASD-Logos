@@ -90,12 +90,14 @@ color.style.backgroundColor='red'
 color.style.color='aliceblue'
 document.getElementById('select_Departamentos').disabled=false;
 
+
 //document.getElementById('a_cadastro').click()
 //document.getElementById('divCadastro').style.display='block'
 //document.getElementById('div_Cadastrados').style.display='none';
 
 }
 });
+
 
 // select departamentos
 document.getElementById('select_Departamentos').disabled=true;
@@ -114,11 +116,27 @@ color2.style.color='aliceblue'
 //document.getElementById('a_cadastro').click()
 //document.getElementById('divCadastro').style.display='block'
 //document.getElementById('div_Cadastrados').style.display='none';
+var resp2=document.getElementById('select_Departamentos').value;
+var resp1=document.getElementById('select_Material').value;
+sessionStorage.setItem('ListadEPART', resp2)
+document.getElementById(`${resp1}`).click()
 
 }
 });
+function resetSelects() {
+document.getElementById('select_Material').value= '';
+document.getElementById('select_Departamentos').value='';
+sessionStorage.setItem('ListadEPART', '')
 
-
+document.getElementById('select_Departamentos').disabled=true;
+var cor=document.getElementById('select_Departamentos');
+cor.style.backgroundColor='aliceblue';
+cor.style.color='black';
+ var cor2=document.getElementById('select_Material');
+cor2.style.backgroundColor='aliceblue';
+ cor2.style.color='black';
+}
+resetSelects()
 
 // video novo tempo
 function videosDevos(){
@@ -149,8 +167,8 @@ querySnapshot.forEach((doc) => {
 var doc = doc.data();   // dados do documento       // ID do documento
 var itens = querySnapshot.size;
 //document.getElementById('lblHoraDevo').innerHTML=`AT: ${doc.Data_Atualizada}`
-document.getElementById('img_rec2').src=doc.Imagem01;
-document.getElementById('h3_UrlRec2').innerHTML=doc.Nome01;
+document.getElementById('img_rec5').src=doc.Imagem01;
+document.getElementById('h3_UrlRec5').innerHTML=doc.Nome01;
 
 document.getElementById('img_rec3').src=doc.Imagem02;
 document.getElementById('h3_UrlRec3').innerHTML=doc.Nome02;
@@ -158,8 +176,8 @@ document.getElementById('h3_UrlRec3').innerHTML=doc.Nome02;
 document.getElementById('img_rec4').src=doc.Imagem03;
 document.getElementById('h3_UrlRec4').innerHTML=doc.Nome03;
 
-document.getElementById('img_rec5').src=doc.Imagem04;
-document.getElementById('h3_UrlRec5').innerHTML=doc.Nome04;
+document.getElementById('img_rec2').src=doc.Imagem04;
+document.getElementById('h3_UrlRec2').innerHTML=doc.Nome04;
 })
 })
 }
@@ -178,7 +196,7 @@ container.scrollBy({ left: 300, behavior: 'smooth' });
 })
 
 // planet of chrit
-document.getElementById('rec2').addEventListener('click',function(){
+document.getElementById('rec5').addEventListener('click',function(){
 window.open('https://www.youtube.com/@PlanetofChrist','_self')
 });
 
@@ -193,7 +211,7 @@ window.open('https://www.instagram.com/8regiao.apse/','_self')
 });
 
 // DEsbrava 7 materias
-document.getElementById('rec5').addEventListener('click',function(){
+document.getElementById('rec2').addEventListener('click',function(){
 window.open('https://desbrava7.com/','_self')
 });
 
@@ -307,7 +325,7 @@ alert(`Nome: ${doc.Usuário}`)
 iniciarUserFirebase()
 
 document.getElementById('sobre').addEventListener('click', function() { 
-alert('Sobre')
+document.getElementById('a_sobre').click()
 })
 
 //pasword
@@ -321,6 +339,7 @@ sessionStorage.setItem('Pasword2', dados.Master1);
 sessionStorage.setItem('Pasword3', dados.Master2);
 sessionStorage.setItem('TelefoneAdmin', dados.Telefone);
 sessionStorage.setItem('EmailAdmin', dados.Email)
+
 }
 })
 //Administração
@@ -449,7 +468,11 @@ event.preventDefault(); // evita navegação imediata
 //alert(`Você clicou em:', ${this.textContent}`);
 //alert('Href:', this.getAttribute('href'));
 document.getElementById('h2Material').innerHTML=`Material`;
+
+
 sessionStorage.setItem('ListaCadVL', this.title)
+
+var departamento= sessionStorage.getItem('ListadEPART')
 
 if(init>=1){
 
@@ -485,8 +508,8 @@ querySnapshot.forEach(doc => {
 var doc = doc.data();
 var itemss= querySnapshot.size;
 
-if(this.title==doc.Lista){
-  
+if(this.title==doc.Lista|| this.title=='Diversos'){
+  if(departamento==doc.Departamento|| departamento==''){
 itens++
  if(itens<=respItens){
 
@@ -536,12 +559,65 @@ geraldiv.appendChild(botãoDiv);
 
 list.appendChild(geraldiv)
 
-document.getElementById('h2Material').innerHTML=`${this.textContent} (${itens})`;
+document.getElementById('h2Material').innerHTML=`${this.textContent} (${itens})`; ;
+resetSelects()
+if(itens< respItens){
+document.getElementById('lblVerMais').style.display='none'
+}else{
+document.getElementById('lblVerMais').style.display='block'
+}
 
-
+// Botaõ Canva
 botãoCanva.addEventListener('click', function(){
  Swal.fire('','Em breve nova função!')
 });
+
+
+//Botão Imagem
+imgList.addEventListener('click',function(){
+
+Swal.fire({
+title: `Perfil`,
+html: `
+<img id='LogoIMG' src="" alt="" width="280"> <br>
+<h2 id='TituloCustonn' >Titulo</h2>
+<p id='SubTituloCustonn' >SubTitulo</p><br>
+<p id='OBSCustonn' >SubTitulo</p><br><br>
+`,
+background: 'hsl(0, 0%, 100%)',
+color: '#0e0e0e',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-custom_img' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+
+
+if(doc.Lista=='logos'){
+document.querySelector('.my-custom_img h2').innerHTML='Logo'
+} else if(doc.Lista=='Animes'){
+  document.querySelector('.my-custom_img h2').innerHTML='Animação'
+} else if(doc.Lista=='GIF'){
+  document.querySelector('.my-custom_img h2').innerHTML='GIF'
+} else if(doc.Lista=='trunfos'){
+  document.querySelector('.my-custom_img h2').innerHTML='Trunfo'
+} else if(doc.Lista=='Emojis'){
+  document.querySelector('.my-custom_img h2').innerHTML='Emoji'
+} else if(doc.Lista=='desing'){
+  document.querySelector('.my-custom_img h2').innerHTML='desing'
+} 
+
+document.getElementById('LogoIMG').src=doc.Imagem;
+document.getElementById('TituloCustonn').innerHTML=doc.Titulo;
+document.getElementById('SubTituloCustonn').innerHTML=doc.SubTitulo;
+document.getElementById('OBSCustonn').innerHTML= `<b id='b_custon'> Observações </b>:\n${doc.OBS}`;
+
+// Quando clicar em "Trocar de foto"
+document.getElementById('deslogar').addEventListener('click', function(){
+deslogar()
+window.location.reload()
+})
+})
 
 // BAIXAR
 botãoBaixar.addEventListener('click', async function() {
@@ -587,7 +663,7 @@ try {
 // monta a mensagem para WhatsApp
 var pag = `https://Link/?codigo=${doc.Codigo_ID}`;
 var url = "https://asd-logos.netlify.app/";
-var titulo = `${doc.Titulo}: ${url}`;
+var titulo = `${doc.SubTitulo}: ${url}`;
 var cod = `${doc.Codigo_ID}`;
 var whatsappMessage = `${titulo}\n\nCódigo: ${cod}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
@@ -615,12 +691,13 @@ alert("Falha ao compartilhar.");
 });
 }
 }
+}
 })
 })
 });
 });
 
-document.getElementById('logos').click()
+document.getElementById('Diversos').click()
 
 document.getElementById('lblVerMais').addEventListener('click', function(){
   var numero= sessionStorage.getItem('MAis')
@@ -631,6 +708,14 @@ sessionStorage.setItem('MAis',num)
  // alert(resp)
 document.getElementById(`${resp}`).click()
 });
+
+
+
+
+
+
+
+
 
 //Clicar em PDFs
 
@@ -755,7 +840,9 @@ initPage()
 //instagran
 
 document.getElementById('a_insta').addEventListener('click', function(){
-
+  window.open('https://www.instagram.com/asd.logos.design/','_blank')
+});
+document.getElementById('P_InstagreanFooter').addEventListener('click', function(){
   window.open('https://www.instagram.com/asd.logos.design/','_blank')
 });
 
@@ -771,3 +858,38 @@ document.getElementById('emailMenu').addEventListener('click', function(){
     window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`,"_blank");
   }
 });
+document.getElementById('P_EmailFooter').addEventListener('click', function(){
+ var destinatario = sessionStorage.getItem('EmailAdmin');
+  var assunto = "ASD Logos contato";
+  var corpo = "Olá, gostaria de falar sobre ASD Logos.";
+  var isMobile = /Android|iPhone/i.test(navigator.userAgent);
+  if(isMobile){
+    window.location.href = `mailto:${destinatario}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+  } else {
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`,"_blank");
+  }
+});
+
+
+ // WhatsApp
+document.getElementById('P_WhatsappFooter').addEventListener('click', function(){
+var telefone =sessionStorage.getItem('TelefoneAdmin');
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text= Olá, gostaria de falar sobre ASD logos`;
+window.open(url, "_blank");
+Swal.fire(``,`Direcionando ao whatsApp...`,'success')  
+
+});
+document.getElementById('ZAPMenu').addEventListener('click', function(){
+var telefone =sessionStorage.getItem('TelefoneAdmin');
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text= Olá, gostaria de falar sobre ASD logos`;
+window.open(url, "_blank");
+Swal.fire(``,`Direcionando ao whatsApp...`,'success') 
+
+});
+
+//icon pesquisa
+document.getElementById('pesq-1').addEventListener('click', function(){
+Swal.fire('Busca','Selecione um material e um departamento!','info')
+})
