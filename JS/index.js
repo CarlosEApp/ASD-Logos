@@ -891,5 +891,5 @@ Swal.fire(``,`Direcionando ao whatsApp...`,'success')
 
 //icon pesquisa
 document.getElementById('pesq-1').addEventListener('click', function(){
-Swal.fire('Busca','Selecione um material e um departamento!','info')
+Swal.fire('Busca','Para agilizar, Selecione um material e um departamento','info')
 })
