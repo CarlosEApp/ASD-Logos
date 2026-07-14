@@ -152,7 +152,7 @@ var itens = querySnapshot.size;
 var urlDev=doc.Video;
 var result= urlDev.trim();
 document.getElementById('UrlNVT').src="https://www.youtube.com/embed/"+ result;
-document.getElementById('h3_UrlNVT').innerHTML=`${doc.Nome}`
+//document.getElementById('h3_UrlNVT').innerHTML=`${doc.Nome}`
 //document.getElementById('lblHoraDevo').innerHTML=`AT: ${doc.Data_Atualizada}`
 document.getElementById('rec2').src=doc.Imagem01;
 })
@@ -168,16 +168,16 @@ var doc = doc.data();   // dados do documento       // ID do documento
 var itens = querySnapshot.size;
 //document.getElementById('lblHoraDevo').innerHTML=`AT: ${doc.Data_Atualizada}`
 document.getElementById('img_rec5').src=doc.Imagem01;
-document.getElementById('h3_UrlRec5').innerHTML=doc.Nome01;
+//document.getElementById('h3_UrlRec5').innerHTML=doc.Nome01;
 
 document.getElementById('img_rec3').src=doc.Imagem02;
-document.getElementById('h3_UrlRec3').innerHTML=doc.Nome02;
+//document.getElementById('h3_UrlRec3').innerHTML=doc.Nome02;
 
 document.getElementById('img_rec4').src=doc.Imagem03;
-document.getElementById('h3_UrlRec4').innerHTML=doc.Nome03;
+//document.getElementById('h3_UrlRec4').innerHTML=doc.Nome03;
 
 document.getElementById('img_rec2').src=doc.Imagem04;
-document.getElementById('h3_UrlRec2').innerHTML=doc.Nome04;
+//document.getElementById('h3_UrlRec2').innerHTML=doc.Nome04;
 })
 })
 }
