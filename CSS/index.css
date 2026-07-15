@@ -77,12 +77,7 @@ border-radius: 50%;
 margin-right: 5px;
 cursor: pointer;
 }
-#lblUser{
-color: aliceblue;
-font-size: clamp(0.900, 0.3vw  + 0.5rem, 1rem);
-font-family: 'Poppins', sans-serif;
-cursor: pointer;
-}
+
 #divUser{
 display: flex;
 align-items: center;
@@ -886,7 +881,7 @@ display: flex;
 align-items: center;
 gap: 20px;
 }
-#header_um img{
+#imgLOgoHeader{
 width: 250px;
 }
 }
@@ -938,6 +933,12 @@ font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 0.900rem);
 #b_custon{
   color: #1f008f;
 }
-#header_um img{
+#imgLOgoHeader{
   padding-top: 7px;
+}
+#lblUser{
+color: aliceblue;
+font-size: clamp(0.900, 0.3vw  + 0.5rem, 1rem);
+font-family: 'Poppins', sans-serif;
+cursor: pointer;
 }
