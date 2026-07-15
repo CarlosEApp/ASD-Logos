@@ -938,3 +938,6 @@ font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 0.900rem);
 #b_custon{
   color: #1f008f;
 }
+#header_um img{
+  padding-top: 7px;
+}

@@ -1,0 +1,185 @@
+*{
+margin: 0%;
+padding: 0%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+::-webkit-scrollbar {
+width: 5px;
+margin-left: 5px;
+margin-top: 5px;
+/* Largura da barra de rolagem */
+cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+margin-left: 3px;
+background-color: rgba(0, 62, 100, 0);
+/* Cor do polegar da barra de rolagem */
+margin-top: 5px;
+border-radius: 5px;
+cursor: pointer;
+}
+:-webkit-scrollbar-track {
+/* Cor da trilha da barra de rolagem */
+margin-top: 5px;
+border-radius: 7 rgb(177, 175, 175);
+background-color: rgba(38, 39, 39, 0);
+border-radius: 5px;
+cursor: pointer;
+}
+body{
+font-family: 'Poppins', sans-serif;
+background-color: rgb(248, 249, 255);
+margin: 0%;
+padding: 0%;
+}
+header{
+margin: auto;
+width: 100%;
+background-color: black;
+padding-bottom: 20px;
+position: fixed;
+z-index: 99;
+}
+#header_um{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+header i{
+color: rgb(255, 255, 255);
+cursor: pointer;
+background-color: transparent;
+font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+}
+
+#togle{
+margin-right: 10px;
+}
+#I_Casa, #i_admin{
+font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+margin-right: 10px;
+background-color: transparent;
+}
+header i:hover{
+color: rgb(9, 255, 0);
+}
+header button{
+padding: 5px;
+cursor: pointer;
+border: 0cap;
+background-color: transparent;
+color: rgb(255, 255, 255);
+font-family: 'Poppins', sans-serif;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+border-radius: 5px;
+}
+#I_compartilhar{
+margin-right: 20px;
+cursor: pointer;
+}
+#header_um img{
+width: 300px;
+padding-top: 7px;
+}
+@media (max-width: 560px) {
+
+#header_um img{
+width: 250px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+}
+
+main{
+margin: auto;
+width: 99%;
+max-width: 1600px;
+min-height: 100vh;
+padding-top: 170px;
+background-color: transparent;
+margin-bottom: 70px;
+}
+
+#main_um{
+margin: auto;
+width: 98%;
+max-width: 1000px;
+background-color:transparent;
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.473);
+
+}
+#imgLogo{
+margin: auto;
+width: 80%;
+max-width: 400px;
+margin-top: 20px;
+margin-left: 20px;
+}
+#divFlex{
+display: flex;
+justify-content: space-around;
+align-items: center;
+gap: 10px;
+flex-wrap: wrap;
+padding-bottom: 70px;
+}
+
+#i_Baixar, #I_compartilhar{
+cursor: pointer;
+font-size: clamp(2.100rem, 0.3vw  + 0.5rem, 2.100rem);
+}
+#i_Baixar:hover, #I_compartilhar:hover{
+    color: rgb(255, 81, 0);
+}
+#divBotões{
+margin: auto;
+width: 90%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+#divInfo{
+margin: auto;
+width: 95%;
+max-width: 400PX;
+background-color: #0400ff00;
+text-align: center;
+
+}
+#imgBT_canva{
+cursor: pointer;
+
+border: 2px solid transparent;
+}
+#imgBT_canva:hover{
+cursor: pointer;
+border: 2px solid rgb(255, 81, 0);
+border-radius: 50%;
+}
+#p_codigo{
+    color: transparent;
+
+}
+
+@media (max-width: 870px) {
+#divFlex{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 3px;
+flex-wrap: wrap;
+padding-bottom: 70px;
+background-color: rgba(0, 255, 255, 0);
+}
+}
+
+footer{
+width: 100%;
+background-color: rgb(0, 0, 0);
+min-height: 82vh;
+background-image: url('../SRC/LOGO.png');
+background-size: 97%;
+background-repeat: no-repeat;
+background-position: center;
+}

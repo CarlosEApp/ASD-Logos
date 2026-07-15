@@ -569,7 +569,20 @@ document.getElementById('lblVerMais').style.display='block'
 
 // Botaõ Canva
 botãoCanva.addEventListener('click', function(){
- Swal.fire('','Em breve nova função!')
+   Swal.fire('Editar no canva','Você sera redirecionado para o Canva!','info')
+   setTimeout(function(){
+      var lista= doc.Lista
+      if(lista=='logos'){
+         window.open('https://canva.link/9fjk304mcq37jal','_self')
+      } else if(lista=='Animes'){
+         window.open('https://canva.link/yr6w22brpggf53g','_self')
+      } else if(lista=='Emojis'){
+         window.open(']https://canva.link/74qkfn901kiy8hq','_self')
+      }else if(lista=='GIF'){
+         window.open('https://canva.link/w5cycctxbpm3t3a','_self')
+      }
+ },2000)
+
 });
 
 
@@ -662,9 +675,9 @@ alert('Falha ao baixar imagem.');
 botãoCompart.addEventListener('click', async function() {
 try {
 // monta a mensagem para WhatsApp
-var pag = `https://Link/?codigo=${doc.Codigo_ID}`;
+var pag = `https://asd-logos.netlify.app/HTML/apresentação.html/?codigo=${doc.Codigo_ID}`;
 var url = "https://asd-logos.netlify.app/";
-var titulo = `${doc.SubTitulo}: ${url}`;
+var titulo = `${doc.SubTitulo}: ${pag}`;
 var cod = `${doc.Codigo_ID}`;
 var whatsappMessage = `${titulo}\n\nCódigo: ${cod}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
