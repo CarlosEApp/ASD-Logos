@@ -87,6 +87,8 @@ db.collection('Cadastros-Gerais').doc(codigo).get().then((doc) => {
         document.getElementById('imgLogo').src= dados.Imagem
         document.getElementById('h2_titulo').innerHTML = dados.Titulo;
         document.getElementById('h3_SubTitulo').innerHTML = dados.SubTitulo;
+        document.getElementById('tituloBarra').innerHTML=dados.Titulo;
+        
          if(dados.OBS){
             document.getElementById('p_OBS').innerHTML = dados.OBS;
              document.getElementById('p_OBS').style.display='block'
