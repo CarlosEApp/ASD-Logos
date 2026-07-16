@@ -588,8 +588,8 @@ botãoCanva.addEventListener('click', function(){
          window.open('https://canva.link/9fjk304mcq37jal','_self')
       } else if(lista=='Animes'){
          window.open('https://canva.link/yr6w22brpggf53g','_self')
-      } else if(lista=='Emojis'){
-         window.open(']https://canva.link/74qkfn901kiy8hq','_self')
+      } else if(lista=='Emoji'){
+         window.open('https://canva.link/74qkfn901kiy8hq','_self')
       }else if(lista=='GIF'){
          window.open('https://canva.link/w5cycctxbpm3t3a','_self')
       }
