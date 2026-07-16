@@ -149,12 +149,16 @@ produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach((doc) => {
 var doc = doc.data();   // dados do documento       // ID do documento
 var itens = querySnapshot.size;
+if(doc.Nome=='Tv Novo Tempo'){
 var urlDev=doc.Video;
 var result= urlDev.trim();
 document.getElementById('UrlNVT').src="https://www.youtube.com/embed/"+ result;
 //document.getElementById('h3_UrlNVT').innerHTML=`${doc.Nome}`
 //document.getElementById('lblHoraDevo').innerHTML=`AT: ${doc.Data_Atualizada}`
 document.getElementById('rec2').src=doc.Imagem01;
+}else{
+
+}
 })
 })
 };
