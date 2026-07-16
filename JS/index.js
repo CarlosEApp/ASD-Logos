@@ -467,6 +467,15 @@ link.addEventListener('click', function(event) {
 event.preventDefault(); // evita navegação imediata
 //alert(`Você clicou em:', ${this.textContent}`);
 //alert('Href:', this.getAttribute('href'));
+
+if(this.title=='video'){
+
+var departamento= sessionStorage.getItem('ListadEPART')
+
+//window.open(`${this.OBS}`,'_blank')
+Swal.fire('Em breve!','Videos MP4 úteis para auxiliar no seu ministério, aquarde!','info')
+
+}else{
 document.getElementById('h2Material').innerHTML=`Material`;
 
 
@@ -487,7 +496,6 @@ if(init>=1){
 }else{
 init++
 }
-
 
 var itens= 0
 
@@ -709,6 +717,7 @@ alert("Falha ao compartilhar.");
 }
 })
 })
+}
 });
 });
 
