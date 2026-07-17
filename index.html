@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD Logos - Design - GIFs - PDFs - Vídeos...</title>
+      <link rel="shortcut icon" href='SRC/LogoApas.png' type="image/x-icon">
+      
+   <meta property="og:title" content="ASD Logos - Design - GIFs - PDFs - Vídeos.. !">
+   <meta property="og:description" content="Confira Logos, Design, GIFs, PDFs, Vídeos...  para usar em seus projetos!">
+   <meta property="og:image" content="https://asd-logos.netlify.app/SRC/ASD_META_TEG_IMG.png">
+   <meta property="og:url" content="https://asd-logos.netlify.app/">
+   <meta property="og:type" content="website">
+   <meta property="fb:app_id" content="https://asd-logos.netlify.app/"/>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<meta name="google-site-verification" content="I5QDbpWaGPHDZCWZITuNbd94oKGkibaclmduJlckKqU" />
+<meta name="msvalidate.01" content="91A47097945E8CDB896C9CA2D3B40518" />
+<link rel="stylesheet" href="CSS/index.css">
+</head>
+
+<body>
+    <div id="divGeral">
+      <a id="topo" title="Ir para topo" href="#"></a>
+      <a  id="a_escolha" href="#scrollLeft" title="a escolha"></a>
+        <a  id="a_divEscolha" href="#escolhaFlex" title="a divEscolha"></a>
+         <a  id="a_footer" href="#footer" title="a footer"></a>
+         <a id="a_sobre" href="#Main_tres" title="a_sobre"></a>
+  <header>
+    <div id="header_um">
+     <img id="imgLOgoHeader" src="SRC/LOGO.png" width="300px" alt=""> <div> <button title="Ir para Tela Principal"><i id="I_Casa" class="fa-solid fa-house"></i> </button> <button id="admin" title="Administradores"><i id="i_admin" class="fa-solid fa-user"></i></button>
+      </div> <div id="divUser"> <img id="imgUser" src="SRC/Profile-PNG-Images.png" width="33px" alt=""> <label id="lblUser" for=""> User </label></div><i id="togle" title="Tela Cheia" class="fa-solid fa-desktop"></i>  <i id="menu" class="fa-solid fa-bars"></i>
+
+ </div>
+
+  <div id="header_dois">
+   <div>  <select name="Cadatro" id="select_Material" title="Cadastrar">
+        <option value="" >Material </option>
+          <option value="logos">Logos</option>
+            <option value="trunfos">Trunfos</option>
+             <option value="GIF">GIFs</option>
+              <option value="Animes">Animação</option>
+               <option value="Emoji">Emojis</option>
+                <option value="video">Vídeo MP4</option>
+            
+                 <option value="design">Design</option>
+                  <option value="sair"></option>
+                   <option value="">Exit</option>
+      </select>
+
+     <select name="Procura" id="select_Departamentos" title="Departamentos">
+         <option value="">Departamento</option>
+          <option value="IASD">IASD</option>
+           <option value="Desbravadores">Desbravadores</option>
+            <option value="Aventureiros">Aventureiros</option>
+             <option value="Adolecentes">Adolecentes</option>
+               <option value="Criança">Ministério da Criança</option>
+                <option value="Jovens">Ministério Jovens</option>
+                 <option value="Escola Sabatina">Escola Sabatina</option>
+                  <option value="Saúde">Saúde Adventista</option>
+                    <option value="Asa">ASA</option>
+                     <option value="Cominicação">Comunicação</option>
+                      <option value="Som e Imagem">Audio e visual</option>
+                       <option value="Pessoal">Ministério Pessoal</option>
+                        <option value="Família">Ministério da Família</option>
+                          <option value="Evangelismo">Evangelismo</option>
+                           <option value="Mulher">Ministério da Mulher</option>
+                            <option value="Musíca">Ministério da Musíca</option>
+                             <option value="liberdade Religiosa">Liberdade Religiosa</option>
+                              <option value="Publicações">Publicações</option>
+                               <option value="Clubes">Clubes</option>
+                                <option value="Diversos">Diversos</option>
+                                 <option value="sair"></option>
+                                  <option value="sair">Exit</option>
+          </select> 
+    </div> <i id="pesq-1" title="Start pesquisa" class="fa-solid fa-magnifying-glass"></i>
+
+   </div>
+ </header>
+
+      <div id="menu_lateral">
+        <p id="aditeUser"></p>
+       <div id="MenuIMG"> <img id="imgMenuUser" src="SRC/Profile-PNG-Images.png" alt="" width="70px"> 
+       <label for="" id="lblnomeUser">User</label></div>
+         <nav>
+          <ul>
+           <li><a id="a_insta"> <i class="fa-brands fa-instagram"></i> Instagram</a></li>
+           <li><a id="togle_" ><i  title="Tela Cheia" class="fa-solid fa-desktop"></i> Tela Cheia</a></li>
+           <li><a id="emailMenu" ><i class="fa-solid fa-envelope"></i> Email</a></li>
+            <li><a id="ZAPMenu" ><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+           <li><a  id="sobre" href="#divQuemSomos">📦 Sobre</a></li>
+           <li><a id="Admin"><i  class="fa-solid fa-user"></i> Administração</a></li>
+           <li><a id="exitMenu_" ><i class="fa-solid fa-delete-left"></i> Exit </a></li> 
+         <!-- Adicione mais itens se quiser -->
+          </ul>
+         </nav>
+      </div>
+
+   <main>
+     <div id="main_um">
+       <!-- Resultado da pesquisa -->
+         <div id="div_Result_Pesquisa">
+           <h1 id="h1_result">Resultado:</h1>
+
+         </div>
+     </div>
+
+    <div id="main_dois">
+  <div id="div_main_atalhos">
+  <h2 id="h1_result">Recomendamos:</h2>
+  <br>
+  <!-- Atalhos Botões de navegação -->
+  <div id="div_rec_flex">
+    <div id="rec1">
+      <h3 id="h3_UrlNVT"></h3>
+      <iframe id="UrlNVT" width="300px" height="180px" src=""
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe></div>
+
+    <div id="rec2">   <h3 class="h3" id="h3_UrlRec2"></h3>
+    <img id="img_rec2" src="SRC/LogoApas.png" width="310px" height="150px" alt=""></div>
+
+    <div id="rec3">   <h3 class="h3"  id="h3_UrlRec3"></h3>
+    <img id="img_rec3"  src="SRC/LogoApas.png" width="280px" height="170px" alt=""></div>
+
+    <div id="rec4">   <h3 class="h3" id="h3_UrlRec4"></h3>
+    <img id="img_rec4"  src="SRC/LogoApas.png" width="310px" height="150px" alt=""></div>
+
+    <div id="rec5">   <h3 class="h3" id="h3_UrlRec5"></h3>
+    <img id="img_rec5"  src="SRC/LogoApas.png" width="310px" height="150px" alt=""></div>
+
+  </div>
+    <button id="scrollLeft" >◀ </button>
+    <button id="scrollRight">▶</button>
+</div>
+
+      <div id="div_main_flex">
+ <!-- Opções de Atalhos -->
+        <div id="divEscolha">
+            <h3>Opções de Materiais</h3>
+
+            <div id="escolhaFlex">
+            <p id="logos" title="logos">Logos</p>
+            <p id="Animes"  title="Animes">Animação</p>
+            <p id="Emoji" title="Emoji">Emoji</p>
+            <p id="GIF" title="GIF">Gif</p>
+            <p id="trunfos" title="trunfos">Trunfos</p>
+            <p id="design" title="design">Design</p>
+            <p id="video" title="video">Video MP4</p>
+             <p id="Diversos" title="Diversos">Diversos</p>
+            </div>
+
+          <div >
+          
+          </div>
+        </div>
+         <!-- LIsta inicial -->
+          <div id="divLista">
+            <h2 id="h2Material">Material</h2>
+            <div id="list"></div>
+            <button id="lblVerMais" for="">Ver Mais +</button>
+          </div>
+         <!-- Lista de PDFs -->
+        <div id="divPDF">
+          <h3 id="h2PDF">PDFs</h3>
+          <div id="pdf_L">
+
+                 <div id="divPDF1">
+                 <p>MANUAL ADMINISTRATIVO DESBRAVADORES</p>
+                 <img id="imgPDF1" src="SRC/PDF_IMAGEM.png" width="100px" alt="">
+                 </div> <br>
+
+                   <div id="divPDF2">
+                 <p>Manual PDF de Nós e Amarras</p>
+                 <img id="imgPDF2" src="SRC/PDF_IMAGEM.png" width="100px"  alt="">
+                 </div> <br>
+
+                   <div id="divPDF3">
+                 <p>MANUAL PDF DE ORDEM UNIDA</p>
+                 <img id="imgPDF3" src="SRC/PDF_IMAGEM.png" width="100px"  alt="">
+                 </div> <br>
+
+                   <div id="divPDF4">
+                 <p>REGULAMENTO DE UNIFORMES MDA 2020</p>
+                 <img id="imgPDF4" src="SRC/PDF_IMAGEM.png" width="100px" alt="">
+                 </div> <br>
+
+                   <div id="divPDF5">
+                 <p>Manual PDF de Especialidades 2025</p>
+                 <img id="imgPDF5" src="SRC/PDF_IMAGEM.png" width="100px"  alt="">
+                 </div> <br>
+          
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div id="Main_tres">
+
+    </div>
+
+   </main>
+    <div id="divQuemSomos">
+       <div>
+         <h1>Quem Somos</h1>
+         <p>No <b id="b_blue">ASD Logos</b>, reunimos em um só lugar materiais criativos e úteis para todos os departamentos da <b id="b_blue"> Igreja Adventista do Sétimo Dia </b>(IASD). <BR>
+          Aqui você encontra logos, animações, PDFs, GIFs, emojis, vídeos e muito mais — tudo disponível para baixar de forma simples, sem anúncios e sem burocracia.</p>
+          <br>
+          <p>Nosso objetivo é apoiar ministérios como Desbravadores, Aventureiros, Jovens Adventistas e todos os demais departamentos da igreja,<br>
+             oferecendo recursos que fortalecem a identidade e a missão de cada área.</p>
+             <br>
+             <p>Somos apaixonados por servir e acreditamos que compartilhar materiais de qualidade é uma forma de impulsionar a comunicação, a criatividade e o trabalho da igreja.</p>
+       </div>
+    </div>
+   <footer id="footer">
+        <div id="divRedes">
+        <p id="P_WhatsappFooter"><i class="fa-brands fa-whatsapp"></i> WhatsApp</p>
+          <p id="P_InstagreanFooter"><i class="fa-brands fa-instagram"></i> Instagran</p> 
+           <p id="P_EmailFooter"><i class="fa-regular fa-envelope"></i> Email</p>
+          
+        </div>
+   </footer>
+
+
+    </div>
+
+      <!-- Importa o JS separado -->
+  <script type="module" src="JS/index.js"></script>
+</body>
+</html>
