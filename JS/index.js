@@ -477,7 +477,7 @@ if(this.title=='video'){
 var departamento= sessionStorage.getItem('ListadEPART')
 
 //window.open(`${this.OBS}`,'_blank')
-Swal.fire('Em breve!','Videos MP4 úteis para auxiliar no seu ministério, aquarde!','info')
+Swal.fire('Em breve!','Videos MP4 úteis para auxiliar no seu ministério, aguarde!','info')
 
 }else{
 document.getElementById('h2Material').innerHTML=`Material`;

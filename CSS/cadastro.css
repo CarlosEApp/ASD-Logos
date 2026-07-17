@@ -319,3 +319,52 @@ align-items: center;
 .ContG #botão2:hover{
      color: rgb(0, 199, 17);
 }
+#fileIdInput,#filedelete{
+    display: none;
+}
+#videoInput{
+    border: 0cap;
+    cursor: pointer;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(221, 81, 0);
+    color: azure;
+}
+#videoContainer video{
+    max-width: 200px;
+    max-height: 220px;
+    margin-top: 40px;
+
+}
+#armazenar button{
+    border: 0cap;
+    cursor: pointer;
+    padding: 7px;
+    margin-top: 20px;
+    background-color: rgb(0, 0, 0);
+color: azure;
+border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    width: 25%;
+
+}
+#armazenar button:hover{
+        background-color: rgb(255, 82, 2);
+color: azure;
+}
+#armazenar #salvarCadVideo{
+    width: 80%;
+}
+#dadosdiv input{
+    padding: 10px;
+    border: 1px solid rgba(58, 58, 58, 0.486);
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 90%;
+    border-radius: 10px;
+     font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.100rem);
+}
+#Preenchimentoh2{
+    color: red;
+}

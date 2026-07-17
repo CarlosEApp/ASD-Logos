@@ -76,6 +76,131 @@ document.getElementById('inputCódigo').value= `${codigo_}`
 }
 
 document.getElementById('select_Cadastre').addEventListener('change', function(){
+  
+var resp= document.getElementById('select_Cadastre').value;
+if(resp=='video'){
+
+document.getElementById('select_Cadastre').value='';
+document.getElementById('divCadastro').style.display='none'
+document.getElementById('div_Cadastrados').style.display='none';
+
+Swal.fire({
+title: `Upload e Download `,
+html: `
+<h2 id='Preenchimentoh2'>Preencha os campos Titulo e SubT.</h2>
+<div id='dadosdiv'>
+<input type="text" id="TituloInputVideo" placeholder="Digite um Titulo"> <br>
+<input type="text" id="SubTituloInputVideo" placeholder="Digite um SubTitulo"> <br>
+</div>
+<div id="armazenar">
+<h4>Upload</h4>
+<input type="file" id="videoInput" accept="video/*" placeholder="file"><br>
+<button onclick="uploadVideo()">Enviar Vídeo</button>
+<br><br>
+<h4>Visualizar , Baixar , Deletar</h4>
+<input type="text" id="fileIdInput" placeholder="Digite o File ID">
+<input type="text" id="filedelete" placeholder="Digite o File ID">
+<button onclick="showVideo()">Mostrar</button>
+<button onclick="downloadVideo()">Baixar</button>
+<button id="btnDelet" onclick="deleteVideo()" title="deletar"> Deletar</button>
+<div id="videoContainer"></div>
+<br>
+<button id="salvarCadVideo"  title="Salvar"> Salvar Video</button>
+<br><br>
+</div>
+`,
+background: 'hsl(0, 0%, 100%)',
+color: '#0e0e0e',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-custom_img' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+  document.getElementById('Preenchimentoh2').style.display='none';
+var client = new Appwrite.Client()
+.setEndpoint("https://nyc.cloud.appwrite.io/v1")
+.setProject("6a592bf5000f7f251ba1");
+
+var storage = new Appwrite.Storage(client);
+var bucketId = "6a592c4b000f5847fcd2"; 
+
+// Funções no escopo global
+window.uploadVideo = async function() {
+var file = document.getElementById("videoInput").files[0];
+if (!file) return Swal.fire("Erro", "Selecione um vídeo!", "error");
+try {
+var response = await storage.createFile(bucketId, "unique()", file);
+// Swal.fire("Sucesso", "Upload concluído! File ID: " + response.$id, "success");
+document.getElementById('fileIdInput').value= response.$id
+document.getElementById('filedelete').value= response.$id
+showVideo()
+} catch (err) {
+//Swal.fire("Erro", err.message, "error");
+}
+}
+
+window.showVideo = async function() {
+var fileId = document.getElementById("fileIdInput").value;
+if (!fileId) return Swal.fire("Erro", "Digite o File ID!", "error");
+try {
+const viewUrl = storage.getFileView(bucketId, fileId);
+document.getElementById("videoContainer").innerHTML =
+`<video src="${viewUrl}" controls width="480"></video>`;
+} catch (err) {
+Swal.fire("Erro", err.message, "error");
+}
+}
+
+window.downloadVideo = async function() {
+var fileId = document.getElementById("fileIdInput").value;
+if (!fileId) return Swal.fire("Erro", "Digite o File ID!", "error");
+try {
+var downloadUrl = storage.getFileDownload(bucketId, fileId);
+window.open(downloadUrl, "_blank");
+} catch (err) {
+Swal.fire("Erro", err.message, "error");
+}
+}
+
+window.deleteVideo = async function() {
+var fileId = document.getElementById("filedelete").value;
+if (!fileId) return Swal.fire("Erro", "Digite o File ID!", "error");
+try {
+await storage.deleteFile(bucketId, fileId);
+Swal.fire("Sucesso", "Vídeo deletado com sucesso!", "success");
+} catch (err) {
+Swal.fire("Erro", err.message, "error");
+}
+}
+
+document.getElementById('salvarCadVideo').addEventListener('click', function(){
+var url_ID=document.getElementById('fileIdInput').value;
+var TituloVideo= document.getElementById('TituloInputVideo').value;
+var subTVideo=document.getElementById('SubTituloInputVideo').value;
+var hora=sessionStorage.getItem('hora')
+var data=sessionStorage.getItem('data')
+
+if(!url_ID|| url_ID==''|| !TituloVideo|| !subTVideo){
+ document.getElementById('Preenchimentoh2').style.display='block';
+}else{
+   document.getElementById('Preenchimentoh2').style.display='none';
+  var vd=firebase.firestore();
+  vd.collection('ASD_VIDEOS_PAG').doc(url_ID).set({
+    
+    Titulo: TituloVideo,
+    SubTitulo: subTVideo,
+    URL_ID:url_ID,
+    DATA:data,
+    HORA:hora,
+
+  
+  })
+  Swal.fire('salvo','Dados armazenados!','success')
+}
+})
+
+}else{
+
 
 document.getElementById('inputNome').value='';
 document.getElementById('inputTitulo').value='';
@@ -101,6 +226,7 @@ document.getElementById('a_cadastro').click()
 document.getElementById('divCadastro').style.display='block'
 document.getElementById('div_Cadastrados').style.display='none';
 }
+  }
 })
 
 setInterval(function(){
