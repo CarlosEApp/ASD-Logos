@@ -192,15 +192,12 @@ if(!url_ID|| url_ID==''|| !TituloVideo|| !subTVideo){
     URL_ID:url_ID,
     DATA:data,
     HORA:hora,
-
-  
   })
   Swal.fire('salvo','Dados armazenados!','success')
 }
 })
 
 }else{
-
 
 document.getElementById('inputNome').value='';
 document.getElementById('inputTitulo').value='';
@@ -215,6 +212,7 @@ resp.disabled = false;
 var resp2=document.getElementById('selectDoc');
 resp2.disabled = false;
 document.getElementById('divIMGEM').style.display='block';
+document.getElementById('VideosCadastrados').style.display='none';
 
 geradorCodigo()
 var resp= document.getElementById('select_Cadastre').value; 
@@ -398,19 +396,31 @@ resp2.disabled = false;
 // Chanar itens cadastrados via select
 document.getElementById('select_Cadastrados').addEventListener('change', function(){
 
+
 var resp= document.getElementById('select_Cadastrados').value; 
 document.getElementById('divIMGEM').style.display='none';
 if(!resp||resp==''||resp=='sair'){
 document.getElementById('select_Cadastrados').value= '';
 document.getElementById('div_Cadastrados').style.display='none';
 }else{
+  if(resp=='video'){
+    document.getElementById('a_cadastro').click()
+document.getElementById('divCadastro').style.display='none';
+document.getElementById('div_Cadastrados').style.display='none';
+sessionStorage.setItem('ListaItens', resp);
+document.getElementById('select_Cadastre').value='';
+ listarVideos() 
+  }else{
+  document.getElementById('VideosCadastrados').style.display='none';
 document.getElementById('a_cadastro').click()
 document.getElementById('divCadastro').style.display='none';
 document.getElementById('div_Cadastrados').style.display='block';
 sessionStorage.setItem('ListaItens', resp);
 document.getElementById('select_Cadastre').value='';
 ListaItens();
+  }
 }
+
 })
 
 //Excluir imagem e nome da imagem
@@ -459,6 +469,7 @@ var codigo= document.getElementById('inputCódigo').value;
 
       }
     })
+  
 })
 
 // lista Itens
@@ -562,6 +573,114 @@ document.getElementById('a_cadastro').click()
 })
 })
 };
+
+
+// videos cadastrados
+
+//recuperar id de video do firebase e criar lista de vieos
+document.getElementById('VideosCadastrados').style.display='none';
+
+async function listarVideos() {
+  // Recupera lista do Firebase
+  var client = new Appwrite.Client()
+.setEndpoint("https://nyc.cloud.appwrite.io/v1")
+.setProject("6a592bf5000f7f251ba1");
+
+var storage = new Appwrite.Storage(client);
+var bucketId = "6a592c4b000f5847fcd2";  
+  var snapshot = await firebase.firestore().collection("ASD_VIDEOS_PAG").get();
+
+  // Container onde os vídeos vão aparecer
+  var container = document.getElementById("listVideo");
+  container.innerHTML = "";
+
+  snapshot.forEach(doc => {
+    var data = doc.data();
+   
+    // Gera URL de visualização no Appwrite
+   var viewUrl = storage.getFileView(bucketId, data.URL_ID);
+    var divVd= document.createElement('div'); divVd.className='divVd';
+     var divVd2= document.createElement('div'); divVd2.className='divVd2';
+      var divVd3= document.createElement('div');divVd3.className='divVd3';
+
+       var video=document.createElement('video'); video.className='video';  video.src= viewUrl;  video.controls= true
+
+      var label=document.createElement('label'); label.className='label'; label.textContent=data.Titulo
+       var label2=document.createElement('label'); label2.className='label2'; label2.textContent=data.SubTitulo
+
+       var botãobaichar=document.createElement('buttom'); botãobaichar.id='botãobaichar'; botãobaichar.className='fa-solid fa-download'; botãobaichar.title='Baixar Arquivo'
+       var botãoExcluir=document.createElement('buttom'); botãoExcluir.id='botãoExcluir'; botãoExcluir.className='fa-solid fa-trash'; botãoExcluir.title='Duplo click para excluir'
+
+      /*
+    var fileId = data.URL_ID;
+    var titulo = data.Titulo;
+    // Gera URL de visualização no Appwrite
+    var viewUrl = storage.getFileView(bucketId, fileId);
+
+    // Cria dinamicamente o bloco de vídeo
+    var videoBlock = document.createElement("div");
+    videoBlock.innerHTML = `
+      <h3>${titulo}</h3>
+      <video src="${viewUrl}" controls width="480"></video>
+    `;
+    */
+    
+    divVd2.appendChild(label);
+     divVd2.appendChild(document.createElement('br'))
+    divVd2.appendChild(label2);
+     divVd2.appendChild(document.createElement('br'))
+      divVd2.appendChild(video)
+    
+     divVd3.appendChild(document.createElement('br'))
+    divVd3.appendChild(botãobaichar);
+     divVd3.appendChild(document.createElement('br'))
+    divVd3.appendChild(botãoExcluir);
+    divVd3.appendChild(document.createElement('br'))
+    divVd.appendChild(divVd2);
+     divVd.appendChild(divVd3);
+
+    container.appendChild(divVd);
+    document.getElementById('VideosCadastrados').style.display='block';
+
+
+  botãobaichar.addEventListener('click',function(){
+      window.downloadVideo_ = async function() {
+var fileId = data.URL_ID
+if (!fileId) return Swal.fire("Erro", "Digite o File ID!", "error");
+try {
+var downloadUrl = storage.getFileDownload(bucketId, fileId);
+window.open(downloadUrl, "_blank");
+} catch (err) {
+Swal.fire("Erro", err.message, "error");
+}
+}
+downloadVideo_()
+});
+
+botãoExcluir.addEventListener('dblclick',function(){
+  window.deleteVideo_ = async function() {
+var fileId = data.URL_ID;
+if (!fileId) return Swal.fire("Erro", "Digite o File ID!", "error");
+try {
+await storage.deleteFile(bucketId, fileId);
+Swal.fire("Sucesso", "Vídeo deletado com sucesso!", "success");
+} catch (err) {
+Swal.fire("Erro", err.message, "error");
+}
+}
+deleteVideo_()
+
+var ex=firebase.firestore() ;
+ex.collection('ASD_VIDEOS_PAG').doc(data.URL_ID).delete()
+
+
+listarVideos()
+})
+
+
+
+  });
+}
 
 // deartamento select
 document.getElementById('sel-Departamentos').addEventListener('change',function(){

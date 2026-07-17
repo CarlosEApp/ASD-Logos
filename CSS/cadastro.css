@@ -276,95 +276,166 @@ flex-direction: column;
 align-items: center;
 }
 .ContG{
-    margin: auto;
-    width: 97%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.733);
-    padding: 5px;
-    margin-top: 20px;
-    background-color: rgb(0, 26, 255);
-    color: aliceblue;
-    border-radius: 10px;
+margin: auto;
+width: 97%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.733);
+padding: 5px;
+margin-top: 20px;
+background-color: rgb(0, 26, 255);
+color: aliceblue;
+border-radius: 10px;
 }
 .imagem1{
-    width: 90px;
-    max-height: 130px;
+width: 90px;
+max-height: 130px;
 }
 .ContG label{
-    font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
-    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.541);
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
+text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.541);
 }
 .ContG #botão{
-    margin-right: 10px;
-    color: rgb(255, 255, 255);
-      font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-      cursor: pointer;
-       border: 0cap;
-       background-color: rgba(1, 90, 102, 0.774);
-       padding: 4px;
-       border-radius: 3px;
+margin-right: 10px;
+color: rgb(255, 255, 255);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+cursor: pointer;
+border: 0cap;
+background-color: rgba(1, 90, 102, 0.774);
+padding: 4px;
+border-radius: 3px;
 }
 .ContG #botão:hover{
-     background-color: rgb(1, 102, 60);
+background-color: rgb(1, 102, 60);
 }
 .ContG #botão2{
-    margin-right: 10px;
-    color: rgb(255, 255, 255);
-      font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
-      cursor: pointer;
-       border: 0cap;
+margin-right: 10px;
+color: rgb(255, 255, 255);
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+cursor: pointer;
+border: 0cap;
 }
 .ContG #botão2:hover{
-     color: rgb(0, 199, 17);
+color: rgb(0, 199, 17);
 }
 #fileIdInput,#filedelete{
-    display: none;
+display: none;
 }
 #videoInput{
-    border: 0cap;
-    cursor: pointer;
-    padding: 10px;
-    font-family: 'Poppins', sans-serif;
-    background-color: rgb(221, 81, 0);
-    color: azure;
+border: 0cap;
+cursor: pointer;
+padding: 10px;
+font-family: 'Poppins', sans-serif;
+background-color: rgb(221, 81, 0);
+color: azure;
 }
 #videoContainer video{
-    max-width: 200px;
-    max-height: 220px;
-    margin-top: 40px;
+max-width: 200px;
+max-height: 220px;
+margin-top: 40px;
 
 }
 #armazenar button{
-    border: 0cap;
-    cursor: pointer;
-    padding: 7px;
-    margin-top: 20px;
-    background-color: rgb(0, 0, 0);
+border: 0cap;
+cursor: pointer;
+padding: 7px;
+margin-top: 20px;
+background-color: rgb(0, 0, 0);
 color: azure;
 border-radius: 30px;
-    font-family: 'Poppins', sans-serif;
-    width: 25%;
+font-family: 'Poppins', sans-serif;
+width: 25%;
 
 }
 #armazenar button:hover{
-        background-color: rgb(255, 82, 2);
+background-color: rgb(255, 82, 2);
 color: azure;
 }
 #armazenar #salvarCadVideo{
-    width: 80%;
+width: 80%;
 }
 #dadosdiv input{
-    padding: 10px;
-    border: 1px solid rgba(58, 58, 58, 0.486);
-    cursor: pointer;
-    margin-bottom: 10px;
-    width: 90%;
-    border-radius: 10px;
-     font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.100rem);
+padding: 10px;
+border: 1px solid rgba(58, 58, 58, 0.486);
+cursor: pointer;
+margin-bottom: 10px;
+width: 90%;
+border-radius: 10px;
+font-family: 'Poppins', sans-serif;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.100rem);
 }
 #Preenchimentoh2{
-    color: red;
+color: red;
+}
+
+.video{
+max-width: 200px;
+max-height: 200px;
+}
+#VideosCadastrados{
+margin: auto;
+width: 95%;
+max-width: 1000px;
+background-color: aliceblue;
+padding: 10px;
+margin-top: 70px;
+border-radius: 10px;
+padding-bottom: 70px;
+}
+#listVideo{
+margin: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+background-color: rgba(137, 43, 226, 0);
+}
+.divVd{
+margin: auto;
+width: 99%;
+max-width: 280px;
+text-align: center;
+background-color: rgba(0, 255, 255, 0);
+}
+#h2_video_cad{
+margin-top: 10px;
+margin-bottom: 20px;
+text-align: center;
+}
+.divVd3{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+#botãobaichar{
+cursor: pointer;
+margin-top: 20px;
+margin-left: 40px;
+font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.400rem);
+}
+#botãobaichar:hover{
+color: rgb(223, 82, 0);
+}
+#botãoExcluir{
+cursor: pointer;
+margin-top: 20px;
+margin-right: 30px;
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.200rem);
+}
+#botãoExcluir:hover{
+color: red;
+}
+
+
+footer{
+width: 100%;
+background-color: rgb(0, 0, 0);
+min-height: 73vh;
+margin-top: 130px;
+background-image: url('../SRC/LOGO.png');
+background-size: 97%;
+background-repeat: no-repeat;
+background-position: center;
 }
