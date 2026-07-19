@@ -476,8 +476,8 @@ if(this.title=='video'){
 
 var departamento= sessionStorage.getItem('ListadEPART')
 
-//window.open(`${this.OBS}`,'_blank')
-Swal.fire('Em breve!','Videos MP4 úteis para auxiliar no seu ministério, aguarde!','info')
+window.open(`HTML/videos.html`,'_blank')
+//Swal.fire('Em breve!','Videos MP4 úteis para auxiliar no seu ministério, aguarde!','info')
 
 }else{
 document.getElementById('h2Material').innerHTML=`Material`;
@@ -918,7 +918,7 @@ document.getElementById('I_compartilhar').addEventListener('click',function(){
 
 var url = "https://asd-logos.netlify.app/";
 var titulo = `Confira nossa Pagina 👉  ${url}`;
-var whatsappMessage = `${titulo}\n\n100% Gratuito!!`;
+var whatsappMessage = `${titulo}\n\nBaixe Rapido!! 100% Gratuito!!!`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 
 // abre o WhatsApp com a mensagem
