@@ -665,7 +665,7 @@ document.body.removeChild(a);
 URL.revokeObjectURL(urlBlob);
 
 // 🔥 Salva no Firestore quem baixou
-const userId = localStorage.getItem("userId") || crypto.randomUUID();
+var userId = localStorage.getItem("userId") || crypto.randomUUID();
 localStorage.setItem("userId", userId);
 
 await firebase.firestore().collection("downloads").add({
@@ -698,7 +698,7 @@ var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 
 // 🔥 registra no Firestore
-const userId = localStorage.getItem("userId") || crypto.randomUUID();
+var userId = localStorage.getItem("userId") || crypto.randomUUID();
 localStorage.setItem("userId", userId);
 
 await firebase.firestore().collection("compartilhamentos").add({
@@ -736,12 +736,6 @@ sessionStorage.setItem('MAis',num)
  // alert(resp)
 document.getElementById(`${resp}`).click()
 });
-
-
-
-
-
-
 
 
 
@@ -917,7 +911,18 @@ Swal.fire(``,`Direcionando ao whatsApp...`,'success')
 
 });
 
-//icon pesquisa
-document.getElementById('pesq-1').addEventListener('click', function(){
-Swal.fire('Busca','Para agilizar, Selecione um material e um departamento','info')
+
+
+//Compartilhar pagina
+document.getElementById('I_compartilhar').addEventListener('click',function(){
+
+var url = "https://asd-logos.netlify.app/";
+var titulo = `Confira nossa Pagina 👉  ${url}`;
+var whatsappMessage = `${titulo}\n\n100% Gratuito!!`;
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+
+// abre o WhatsApp com a mensagem
+window.open(whatsappLink, "_blank");
+
+
 })

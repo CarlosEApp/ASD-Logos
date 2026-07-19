@@ -109,47 +109,12 @@ margin-bottom: 12px;
 margin-left: 10px;
 font-family: 'Poppins', sans-serif;
 }
-#divPsq{
-background-color: blue;
-padding: 3px;
-border-radius: 7px;
-margin-top: 5px;
-margin-left: 30px;
-margin-right: 30px;
-overflow: hidden;
-}
-#divPsq:hover{
-background-color: blue;
-}
-#divPsq input{
-width: 280px;
-cursor: pointer;
-background-color: rgb(0, 0, 0);
-color: rgb(255, 255, 255);
-border: 0cap;
-outline: none;
-font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
-text-shadow: 0px 1px 1px rgb(0, 0, 0);
-padding: 7px;
-font-family: 'Poppins', sans-serif;
-padding-top: 5px;
-padding-bottom: 5px;
-}
-#divPsq i{
-margin-left: 10px;
-margin-right: 5px;
-font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
-font-weight: bolder;
 
-}
-#divPsq i:hover #divPsq{
-background-color: rgb(3, 255, 16);
-}
-#divPsq i:hover{
-color: rgb(0, 255, 255);
-}
 #admin:hover{
 color: rgb(102, 255, 0);
+}
+header i:hover{
+  color: rgb(51, 255, 0);
 }
 main{
 margin: auto;
@@ -415,15 +380,7 @@ height: 100%;
 z-index: 999;
 }
 }
-@media (max-width: 770px) {
 
-#admin, #divUser, #togle{
-display: none;
-}
-#menu{
-display: block;
-}
-}
 #div_main_flex{
 margin: auto;
 width: 100%;
@@ -760,46 +717,40 @@ width: 100%;
   color: #000008;
 }
 #divRedes{
-  position: relative;
   margin: 0 auto;
-  width: 95%;
   color: aliceblue;
-   top: 37px;
   display: flex;
   align-items: center;
   gap: 40px;
 }
-#divRedes p{
-  color: rgba(95, 38, 253, 0.849);
-  cursor: pointer;
-}
+
 #divRedes p:hover{
-    color: rgba(255, 255, 255, 0.849);
+    color: rgba(51, 255, 0, 0.849);
 }
-#P_InstagreanFooter i{
-  color: rgb(211, 4, 211);
-    font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.400rem);
-}
-#P_EmailFooter i{
-  color: rgb(255, 255, 255);
+#divRedes i{
+   color: aliceblue;
     font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.300rem);
 }
-#P_WhatsappFooter i{
-color: rgb(0, 145, 12);
-font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.400rem);
+ #P_WhatsappFooter i{
+ font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.400rem);
+ }
+ #divRedes i:hover{
+   color: rgb(51, 255, 0);
+   
 }
-
-@media (max-width: 620px) {
-#divRedes{
-position: relative;
-margin: 0 auto;
-width: 95%;
-color: aliceblue;
-top: 100px;
-display: flex;
-align-items: center;
-gap: 40px;
+#divRedes p:hover i{
+    color: rgba(51, 255, 0, 0.849);
 }
+#divRedes p{
+  color: aliceblue;
+  cursor: pointer;
+    font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.800);
+}
+#divRedes #P_InstagreanFooter:hover i{
+   color: rgb(156, 0, 156);
+}
+#divRedes #P_EmailFooter:hover i{
+color: rgb(255, 136, 0);
 }
 
 @media (max-width: 520px) {
@@ -871,16 +822,7 @@ width: 290px;
 #divPsq input{
 width: 230px;
 }
-#divRedes{
-position: relative;
-margin: 0 auto;
-width: 95%;
-color: aliceblue;
-top: 70px;
-display: flex;
-align-items: center;
-gap: 20px;
-}
+
 #imgLOgoHeader{
 width: 250px;
 }
@@ -941,4 +883,22 @@ color: aliceblue;
 font-size: clamp(0.900, 0.3vw  + 0.5rem, 1rem);
 font-family: 'Poppins', sans-serif;
 cursor: pointer;
+}
+#I_compartilhar{
+  margin-right: 10px;
+    font-size: clamp(1.500rem, 0.3vw  + 0.5rem, 1.500rem);
+    color: rgb(255, 103, 2);
+}
+#header_dois{
+  margin: auto;
+  max-width: 1000px;
+}
+@media (max-width: 770px) {
+
+#admin, #divUser, #togle, #divRedes{
+display: none;
+}
+#menu{
+display: block;
+}
 }

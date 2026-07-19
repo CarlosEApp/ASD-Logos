@@ -15,7 +15,9 @@ console.log("Nenhum código encontrado na URL.");
 //wal("Código capturado: " + codigo);
 }
 };
-
+ document.getElementById('togle').addEventListener('click',function(){
+    toggleFullScreen() 
+ })
 // Tela Cheia
 function toggleFullScreen() {
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
@@ -204,6 +206,6 @@ document.getElementById('imgBT_canva').addEventListener('click',function(){
        },2000)
 })
 
-document.getElementById('I_Casa').addEventListener('click', function(){
+document.getElementById('lblBt_telaInicial').addEventListener('click', function(){
     window.open('../index.html','_self')
 })

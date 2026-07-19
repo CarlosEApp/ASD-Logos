@@ -78,7 +78,8 @@ margin-right: 20px;
 cursor: pointer;
 }
 #header_um img{
-width: 300px;
+max-width: 400px;
+min-width: 280px;
 padding-top: 7px;
 }
 @media (max-width: 560px) {
@@ -88,6 +89,19 @@ width: 250px;
 padding-top: 10px;
 padding-bottom: 10px;
 }
+}
+#div_header_dois{
+text-align: center;
+}
+#lblBt_telaInicial{
+color: aliceblue;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
+cursor: pointer;
+float: right;
+margin-right: 12%;
+}
+#lblBt_telaInicial:hover{
+color: rgb(21, 255, 0);
 }
 
 main{
@@ -110,7 +124,7 @@ box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.473);
 }
 #imgLogo{
 margin: auto;
-width: 80%;
+width: 91%;
 max-width: 400px;
 margin-top: 20px;
 margin-left: 20px;
