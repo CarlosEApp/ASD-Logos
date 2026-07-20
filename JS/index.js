@@ -476,7 +476,7 @@ if(this.title=='video'){
 
 var departamento= sessionStorage.getItem('ListadEPART')
 
-window.open(`HTML/videos.html`,'_blank')
+window.open(`HTML/videos.html`,'_self')
 //Swal.fire('Em manutenção!','Previsão de liberação dos videos é de até 17/08/2026!','info')
 
 }else{
