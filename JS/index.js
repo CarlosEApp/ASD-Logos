@@ -673,7 +673,8 @@ userId: userId,
 arquivo: doc.Titulo,
 SubTitulo: doc.SubTitulo,
 imagemUrl: doc.Imagem,
-data: new Date().toISOString()
+data: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
+
 });
 
 console.log("Download registrado no Firebase!");
@@ -707,7 +708,8 @@ arquivo: doc.Titulo,
 SubTitulo: doc.SubTitulo,
 imagemUrl: doc.Imagem,
 codigo: doc.Codigo_ID,
-data: new Date().toISOString()
+data: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
+
 });
 
 console.log("Compartilhamento registrado no Firebase!");
