@@ -138,12 +138,18 @@ listarVideos()
 document.getElementById('h2Res').style.display='none';
 async function VideosPesquisa() {
   // Recupera lista do Firebase
-  var client = new Appwrite.Client()
-    .setEndpoint("https://nyc.cloud.appwrite.io/v1")
-    .setProject("6a592bf5000f7f251ba1");
+  //var client = new Appwrite.Client()
+    //.setEndpoint("https://nyc.cloud.appwrite.io/v1")
+   // .setProject("6a592bf5000f7f251ba1");
+ // var storage = new Appwrite.Storage(client);
+ // var bucketId = "6a592c4b000f5847fcd2";  
 
-  var storage = new Appwrite.Storage(client);
-  var bucketId = "6a592c4b000f5847fcd2";  
+ var client = new Appwrite.Client()
+.setEndpoint("https://nyc.cloud.appwrite.io/v1")
+.setProject("6a5e1dd8001fcb3ab158");
+var storage = new Appwrite.Storage(client);
+var bucketId = "6a5e1eb3001e41c232ba"; 
+
   var snapshot = await firebase.firestore().collection("ASD_VIDEOS_PAG").get();
 
   // Texto digitado na pesquisa
