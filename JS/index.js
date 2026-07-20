@@ -477,7 +477,7 @@ if(this.title=='video'){
 var departamento= sessionStorage.getItem('ListadEPART')
 
 window.open(`HTML/videos.html`,'_blank')
-//Swal.fire('Em breve!','Videos MP4 úteis para auxiliar no seu ministério, aguarde!','info')
+//Swal.fire('Em manutenção!','Previsão de liberação dos videos é de até 17/08/2026!','info')
 
 }else{
 document.getElementById('h2Material').innerHTML=`Material`;

@@ -117,12 +117,17 @@ customClass: { popup: 'my-custom_img' },
 didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
   document.getElementById('Preenchimentoh2').style.display='none';
+//var client = new Appwrite.Client()
+//.setEndpoint("https://nyc.cloud.appwrite.io/v1")
+//.setProject("6a592bf5000f7f251ba1");
+//var storage = new Appwrite.Storage(client);
+//var bucketId = "6a592c4b000f5847fcd2"; 
+
 var client = new Appwrite.Client()
 .setEndpoint("https://nyc.cloud.appwrite.io/v1")
-.setProject("6a592bf5000f7f251ba1");
-
+.setProject("6a5e1dd8001fcb3ab158");
 var storage = new Appwrite.Storage(client);
-var bucketId = "6a592c4b000f5847fcd2"; 
+var bucketId = "6a5e1eb3001e41c232ba"; 
 
 // Funções no escopo global
 window.uploadVideo = async function() {
@@ -583,11 +588,17 @@ document.getElementById('VideosCadastrados').style.display='none';
 async function listarVideos() {
   // Recupera lista do Firebase
   var client = new Appwrite.Client()
-.setEndpoint("https://nyc.cloud.appwrite.io/v1")
-.setProject("6a592bf5000f7f251ba1");
+//.setEndpoint("https://nyc.cloud.appwrite.io/v1")
+//.setProject("6a592bf5000f7f251ba1");
+//var storage = new Appwrite.Storage(client);
+//var bucketId = "6a592c4b000f5847fcd2";  
 
+var client = new Appwrite.Client()
+.setEndpoint("https://nyc.cloud.appwrite.io/v1")
+.setProject("6a5e1dd8001fcb3ab158");
 var storage = new Appwrite.Storage(client);
-var bucketId = "6a592c4b000f5847fcd2";  
+var bucketId = "6a5e1eb3001e41c232ba"; 
+
   var snapshot = await firebase.firestore().collection("ASD_VIDEOS_PAG").get();
 
   // Container onde os vídeos vão aparecer
