@@ -32,9 +32,15 @@ background-color: rgb(248, 249, 255);
 margin: 0%;
 padding: 0%;
 }
+#divGeral{
+  margin: auto;
+  width: 100%;
+  max-width: 1920px;
+}
 header{
 margin: auto;
 width: 100%;
+max-width: 1920px;
 background-color: black;
 padding-bottom: 20px;
 position: fixed;

@@ -32,12 +32,19 @@ background-color: rgb(23, 53, 70);
 margin: 0%;
 padding: 0%;
 }
+#div_Geral{
+  margin: auto;
+  width: 100%;
+  max-width: 1920px;
+}
 header{
 margin: auto;
 width: 100%;
+max-width: 1920px;
 background-color: black;
 padding-bottom: 20px;
 position: fixed;
+z-index: 9999;
 }
 #header_um{
 display: flex;
