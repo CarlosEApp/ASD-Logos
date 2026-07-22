@@ -928,3 +928,10 @@ window.open(whatsappLink, "_blank");
 
 
 })
+
+
+// BTN Tela Videos
+document.getElementById('lblVerMaisVD').addEventListener('click',function(){
+
+window.open(`HTML/videos.html`,'_self')
+})

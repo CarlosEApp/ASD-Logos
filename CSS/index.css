@@ -488,7 +488,7 @@ padding: 10px;
   background-color: #e6e6e6b4;
   
 }
-#lblVerMais{
+#lblVerMais, #lblVerMaisVD{
 margin: auto;
 width: 73%;
 max-width: 370px;
@@ -504,7 +504,7 @@ cursor: pointer;
 border: 1px solid rgb(155, 147, 127);
 border-radius: 7px;
 }
-#lblVerMais:hover{
+#lblVerMais:hover, #lblVerMaisVD:hover{
 background-color: #ffffff;
 }
 #pdf_L img{
@@ -513,6 +513,10 @@ background-color: #ffffff;
 }
 #pdf_L img:hover{
   transform: scale(1.2);
+}
+#imgH2Tub{
+  width: 60%;
+  max-width: 210px;
 }
 
 @media (max-width: 1250px) {
@@ -807,11 +811,9 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 padding: 10px;
-
 }
 #pdf_L img{
 width: 160px;
-
 }
 .imgList{
 width: 160px;
@@ -819,7 +821,6 @@ max-height: 210px;
 cursor: pointer;
 transition: transform 0.3s ease; /* suaviza a animação */
 }
-
 }
 @media (max-width: 390px) {
 #divPsq{
@@ -828,13 +829,10 @@ width: 290px;
 #divPsq input{
 width: 230px;
 }
-
 #imgLOgoHeader{
 width: 250px;
 }
 }
-
-
  #Main_tres{
   margin: auto;
   width: 98%;
@@ -845,11 +843,9 @@ width: 250px;
   padding-bottom: 30px;
   margin-bottom: 70px;
  }
-
 #divyoutub{
   width:98%;
   margin: auto;
-  
 }
 #divyoutub h2{
   padding-top: 10px;
@@ -870,7 +866,6 @@ width: 250px;
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 20px;
-  
 }
 #lblsubTub_4{
   font-family: 'Poppins', sans-serif;
@@ -934,6 +929,13 @@ cursor: pointer;
 #header_dois{
   margin: auto;
   max-width: 1000px;
+}
+#divBtMVD{
+  margin: auto;
+  width: 100%;
+  max-width: 1600px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 @media (max-width: 770px) {
 
