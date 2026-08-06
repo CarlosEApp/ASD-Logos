@@ -674,7 +674,6 @@ arquivo: doc.Titulo,
 SubTitulo: doc.SubTitulo,
 imagemUrl: doc.Imagem,
 data: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
-
 });
 
 console.log("Download registrado no Firebase!");
@@ -932,6 +931,5 @@ window.open(whatsappLink, "_blank");
 
 // BTN Tela Videos
 document.getElementById('lblVerMaisVD').addEventListener('click',function(){
-
 window.open(`HTML/videos.html`,'_self')
 })

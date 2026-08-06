@@ -66,11 +66,18 @@ async function listarVideos() {
 //var storage = new Appwrite.Storage(client);
 //var bucketId = "6a592c4b000f5847fcd2";  
 
+//var client = new Appwrite.Client()
+//setEndpoint("https://nyc.cloud.appwrite.io/v1")
+//.setProject("6a5e1dd8001fcb3ab158");
+//var storage = new Appwrite.Storage(client);
+//var bucketId = "6a5e1eb3001e41c232ba";
+
+// chrome asd
 var client = new Appwrite.Client()
 .setEndpoint("https://nyc.cloud.appwrite.io/v1")
-.setProject("6a5e1dd8001fcb3ab158");
+.setProject("6a6766a000111bad0b5a");
 var storage = new Appwrite.Storage(client);
-var bucketId = "6a5e1eb3001e41c232ba";
+var bucketId = "6a73dbf6003d2d2f1647";
 
   var snapshot = await firebase.firestore().collection("ASD_VIDEOS_PAG").get();
 
@@ -144,11 +151,19 @@ async function VideosPesquisa() {
  // var storage = new Appwrite.Storage(client);
  // var bucketId = "6a592c4b000f5847fcd2";  
 
- var client = new Appwrite.Client()
+ //var client = new Appwrite.Client()
+//.setEndpoint("https://nyc.cloud.appwrite.io/v1")
+//.setProject("6a5e1dd8001fcb3ab158");
+//var storage = new Appwrite.Storage(client);
+//var bucketId = "6a5e1eb3001e41c232ba"; 
+
+
+// chrome asd
+var client = new Appwrite.Client()
 .setEndpoint("https://nyc.cloud.appwrite.io/v1")
-.setProject("6a5e1dd8001fcb3ab158");
+.setProject("6a6766a000111bad0b5a");
 var storage = new Appwrite.Storage(client);
-var bucketId = "6a5e1eb3001e41c232ba"; 
+var bucketId = "6a73dbf6003d2d2f1647";
 
   var snapshot = await firebase.firestore().collection("ASD_VIDEOS_PAG").get();
 

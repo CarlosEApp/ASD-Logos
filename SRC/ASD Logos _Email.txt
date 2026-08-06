@@ -3,3 +3,8 @@ ASD Logos ASD_Email
 asdlogos2026@gmail.com
 
 senha @2026_ASD@Logos
+
+
+senha supabase: @ASDlogs@980
+
+senha do banco de dados: HvubSaRpVMxfFaeZ
