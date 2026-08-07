@@ -839,7 +839,7 @@ i = 0;
 sessionStorage.setItem('SeçãoAberta','Aberta')
 document.getElementById('myProgresos').style.display = 'none'
 document.getElementById('topo').click()
-document.getElementById('imgUser').src=''
+
 swalclose()
 clearInterval(id)
 //document.getElementById('imgcad').value = `${url_imagem}`
