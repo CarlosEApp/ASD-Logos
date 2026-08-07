@@ -839,6 +839,7 @@ i = 0;
 sessionStorage.setItem('SeçãoAberta','Aberta')
 document.getElementById('myProgresos').style.display = 'none'
 document.getElementById('topo').click()
+document.getElementById('imgUser').src=''
 swalclose()
 clearInterval(id)
 //document.getElementById('imgcad').value = `${url_imagem}`
@@ -859,9 +860,7 @@ Swal.close()
 }
 initPage()
 
-
 //instagran
-
 document.getElementById('a_insta').addEventListener('click', function(){
   window.open('https://www.instagram.com/asd.logos.design/','_blank')
 });
@@ -893,7 +892,6 @@ document.getElementById('P_EmailFooter').addEventListener('click', function(){
   }
 });
 
-
  // WhatsApp
 document.getElementById('P_WhatsappFooter').addEventListener('click', function(){
 var telefone =sessionStorage.getItem('TelefoneAdmin');
@@ -909,10 +907,7 @@ var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o
 var url = "https://wa.me/"+`${numero}?text= Olá, gostaria de falar sobre ASD logos`;
 window.open(url, "_blank");
 Swal.fire(``,`Direcionando ao whatsApp...`,'success') 
-
 });
-
-
 
 //Compartilhar pagina
 document.getElementById('I_compartilhar').addEventListener('click',function(){
@@ -924,10 +919,7 @@ var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 
 // abre o WhatsApp com a mensagem
 window.open(whatsappLink, "_blank");
-
-
 })
-
 
 // BTN Tela Videos
 document.getElementById('lblVerMaisVD').addEventListener('click',function(){
